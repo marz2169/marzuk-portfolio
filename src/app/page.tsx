@@ -166,18 +166,18 @@ export default function Home() {
             <div className="space-y-6">
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p className="text-2xl font-medium text-gray-800 leading-relaxed">
-                  <em className="text-indigo-600">&ldquo;Turning challenges into opportunities—and spreadsheets into stories—is my superpower.&rdquo;</em>
+                  <em className="text-indigo-600">"Turning challenges into opportunities—and spreadsheets into stories—is my superpower."</em>
                 </p>
                 
                 <p className="text-lg">
-                  I&apos;m <strong className="text-gray-900">Marzuk Haider Chowdhury</strong>, a detail-driven accounting and business enthusiast 
+                  I'm <strong className="text-gray-900">Marzuk Haider Chowdhury</strong>, a detail-driven accounting and business enthusiast 
                   with a passion for making every project a success.
                 </p>
                 
                 <p className="text-lg">
                   From optimizing financial workflows to leading dynamic teams and creative campaigns, 
                   I thrive on solving problems and building strong connections. Whether in the boardroom 
-                  or on campus, I&apos;m always up for making an impact and keeping things interesting along the way!
+                  or on campus, I'm always up for making an impact and keeping things interesting along the way!
                 </p>
                 
                 {/* Personal Philosophy Box */}
@@ -486,10 +486,10 @@ export default function Home() {
               <div className="bg-gradient-to-r from-slate-100 to-blue-100 rounded-3xl p-8 shadow-xl">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Educational Philosophy</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  &ldquo;Education is not just about acquiring knowledge—it&apos;s about developing the analytical mindset 
+                  "Education is not just about acquiring knowledge—it's about developing the analytical mindset 
                   and practical skills needed to solve real-world challenges. Each step of my academic journey 
                   has shaped my ability to think critically, work collaboratively, and approach problems with 
-                  both creativity and precision.&rdquo;
+                  both creativity and precision."
                 </p>
                 <div className="mt-6 flex justify-center">
                   <div className="flex items-center space-x-8 text-sm font-semibold text-gray-600">
@@ -863,8 +863,8 @@ export default function Home() {
 
                 <div className="mt-8 text-center">
                   <p className="text-gray-300 italic">
-                    &ldquo;8+ years of diverse professional experience across sales, customer service, and management roles, 
-                    consistently delivering exceptional results while building strong relationships and driving operational excellence.&rdquo;
+                    "8+ years of diverse professional experience across sales, customer service, and management roles, 
+                    consistently delivering exceptional results while building strong relationships and driving operational excellence."
                   </p>
                 </div>
               </div>
@@ -1618,7 +1618,7 @@ export default function Home() {
       <section id="contact" className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
         <div className="text-center space-y-8">
           <h2 className="text-5xl md:text-7xl font-light">
-            Let&apos;s
+            Let's
           </h2>
           <h2 className="text-5xl md:text-7xl font-bold">
             create

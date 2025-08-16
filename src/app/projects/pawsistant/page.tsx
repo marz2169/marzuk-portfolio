@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function PawsistantPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -6,8 +9,7 @@ export default function PawsistantPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-6">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/pawsistant-logo.svg" alt="Pawsistant Logo" className="w-16 h-16" />
+              <Image src="/pawsistant-logo.svg" alt="Pawsistant Logo" width={64} height={64} className="w-16 h-16" />
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900">
                 Pawsistant
               </h1>
@@ -44,12 +46,12 @@ export default function PawsistantPage() {
 
           {/* Call to Action */}
           <div className="text-center">
-            <a
+            <Link
               href="/"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-semibold text-lg hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               ← Back to Portfolio
-            </a>
+            </Link>
           </div>
         </div>
       </section>
