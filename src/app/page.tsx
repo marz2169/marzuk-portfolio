@@ -1142,10 +1142,283 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Project 3 - Fit Mirror AI */}
+            {/* Project 3 - Pawsistant AI Pet Care Assistant */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-orange-100">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-2xl font-bold text-orange-600">2025</div>
+                <div className="flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full text-sm font-medium shadow-lg">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/pawsistant-logo.svg"
+                    alt="Pawsistant Logo"
+                    className="w-5 h-5 rounded-full"
+                  />
+                  Pawsistant
+                </div>
+                <div className="px-3 py-1 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-full text-xs font-bold uppercase tracking-wide shadow-md">
+                  🚀 BREAKTHROUGH PROJECT
+                </div>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-8 mb-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-orange-600 mb-2">Voice AI</div>
+                  <div className="text-sm text-gray-600">Natural Conversations</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-red-600 mb-2">Real-Time</div>
+                  <div className="text-sm text-gray-600">Health Monitoring</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-pink-600 mb-2">24/7</div>
+                  <div className="text-sm text-gray-600">Pet Care Support</div>
+                </div>
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                PAWSISTANT – AI PET CARE ASSISTANT
+                <span className="block text-sm font-medium text-orange-600 mt-1">Revolutionary Voice-First Pet Healthcare Platform</span>
+              </h3>
+              
+              <p className="text-gray-600 mb-6">
+                <strong>A groundbreaking AI-powered pet care companion</strong> that I developed from concept to deployment. 
+                This innovative platform provides voice-enabled guidance for pet owners through natural language conversations, 
+                real-time health monitoring, personalized care recommendations, and emergency response protocols. Features 
+                seamless website widget integration, comprehensive admin dashboard, and cutting-edge voice AI technology.
+              </p>
+
+              {/* Live Website Showcase */}
+              <div className="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-lg mb-6 border border-orange-200">
+                <div className="flex items-center justify-between mb-4">
+                  <h4 className="font-semibold text-gray-900 flex items-center">
+                    <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    🌐 Live Production Website
+                  </h4>
+                  <a
+                    href="https://pawsistant.me"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-medium hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clipRule="evenodd" />
+                    </svg>
+                    Visit pawsistant.me
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                    </svg>
+                  </a>
+                </div>
+                
+                {/* Website Preview */}
+                <div className="rounded-lg overflow-hidden shadow-xl border border-gray-200 bg-white">
+                  <div className="bg-gray-800 px-4 py-2 flex items-center gap-2">
+                    <div className="flex gap-1">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <div className="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs flex items-center gap-2">
+                      <svg className="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                      </svg>
+                      pawsistant.me
+                    </div>
+                  </div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/pawsistant-homepage.png"
+                    alt="Pawsistant Live Website Homepage"
+                    className="w-full h-auto"
+                    style={{ maxHeight: '400px', objectFit: 'cover' }}
+                  />
+                  <div className="bg-gray-50 px-4 py-3 border-t">
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm text-gray-600">
+                        <span className="font-medium">Live Production:</span> Fully deployed AI pet care platform
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-green-600">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        Online & Active
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Revolutionary Features */}
+              <div className="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-lg mb-6 border border-orange-200">
+                <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
+                  <svg className="w-5 h-5 text-orange-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  Breakthrough Innovation Features
+                </h4>
+                <div className="grid md:grid-cols-2 gap-4 text-sm">
+                  <ul className="text-gray-600 space-y-2">
+                    <li>• <strong>Advanced Voice AI:</strong> Natural language processing for pet health conversations</li>
+                    <li>• <strong>Smart Health Analysis:</strong> AI-powered symptom assessment and recommendations</li>
+                    <li>• <strong>Emergency Protocols:</strong> Instant response system with vet clinic integration</li>
+                  </ul>
+                  <ul className="text-gray-600 space-y-2">
+                    <li>• <strong>Embeddable Widget:</strong> Drop-in SDK for any website with custom branding</li>
+                    <li>• <strong>Admin Dashboard:</strong> Complete content management and analytics platform</li>
+                    <li>• <strong>Real-time Communication:</strong> WebRTC voice integration with VAPI technology</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Advanced Tech Stack */}
+              <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
+                  <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                  Advanced Technology Architecture
+                </h4>
+                <div className="grid md:grid-cols-4 gap-4">
+                  <div>
+                    <h5 className="font-medium text-gray-900 mb-2">AI & Voice</h5>
+                    <div className="space-y-1">
+                      <span className="inline-block px-2 py-1 bg-green-100 text-green-700 rounded text-xs">VAPI</span>
+                      <span className="inline-block px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs">OpenAI</span>
+                      <span className="inline-block px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">WebRTC</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-gray-900 mb-2">Frontend</h5>
+                    <div className="space-y-1">
+                      <span className="inline-block px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs">Vite</span>
+                      <span className="inline-block px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs">Vanilla JS</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-gray-900 mb-2">Backend</h5>
+                    <div className="space-y-1">
+                      <span className="inline-block px-2 py-1 bg-green-100 text-green-700 rounded text-xs">Node.js</span>
+                      <span className="inline-block px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Express</span>
+                      <span className="inline-block px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">SQLite</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-gray-900 mb-2">DevOps</h5>
+                    <div className="space-y-1">
+                      <span className="inline-block px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs">Docker</span>
+                      <span className="inline-block px-2 py-1 bg-teal-100 text-teal-700 rounded text-xs">Nginx</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project Gallery - Using placeholder for now */}
+              <div className="mt-8">
+                <h4 className="font-semibold text-gray-900 mb-4 text-center">Platform Showcase</h4>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {/* Voice Interface Placeholder */}
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-gradient-to-br from-orange-100 to-red-100 border border-orange-200">
+                    <div className="p-8 text-center">
+                      <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span className="text-white text-2xl">🎤</span>
+                      </div>
+                      <h5 className="font-bold text-gray-900 mb-2">Voice AI Interface</h5>
+                      <p className="text-sm text-gray-600">Natural language pet care conversations</p>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <div className="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                        Voice AI
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Widget Integration */}
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-gradient-to-br from-blue-100 to-indigo-100 border border-blue-200">
+                    <div className="p-8 text-center">
+                      <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span className="text-white text-2xl">🔗</span>
+                      </div>
+                      <h5 className="font-bold text-gray-900 mb-2">Widget SDK</h5>
+                      <p className="text-sm text-gray-600">Embeddable into any website</p>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                        Integration
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Admin Dashboard */}
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-gradient-to-br from-green-100 to-emerald-100 border border-green-200">
+                    <div className="p-8 text-center">
+                      <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span className="text-white text-2xl">📊</span>
+                      </div>
+                      <h5 className="font-bold text-gray-900 mb-2">Admin Dashboard</h5>
+                      <p className="text-sm text-gray-600">Complete management platform</p>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <div className="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                        Dashboard
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Innovation Highlights */}
+                <div className="mt-6 p-6 bg-gradient-to-r from-orange-50 via-red-50 to-pink-50 rounded-lg border border-orange-200">
+                  <h5 className="font-semibold text-gray-900 mb-3 text-center flex items-center justify-center">
+                    <span className="text-2xl mr-2">🚀</span>
+                    Development & Innovation Achievements
+                  </h5>
+                  <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                    <ul className="space-y-1">
+                      <li>• <strong>Pioneered voice-first approach</strong> to pet healthcare assistance</li>
+                      <li>• <strong>Integrated cutting-edge AI APIs</strong> (VAPI, OpenAI, WebRTC) into cohesive platform</li>
+                      <li>• <strong>Built scalable widget SDK</strong> for universal website integration</li>
+                    </ul>
+                    <ul className="space-y-1">
+                      <li>• <strong>Developed comprehensive admin dashboard</strong> with real-time analytics</li>
+                      <li>• <strong>Implemented secure voice communication</strong> protocols and data handling</li>
+                      <li>• <strong>Created Docker deployment architecture</strong> for production scalability</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Call to Action */}
+                <div className="mt-6 text-center">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                      href="https://pawsistant.me"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clipRule="evenodd" />
+                      </svg>
+                      🌐 Visit Live Website
+                    </a>
+                    <a
+                      href="/projects/pawsistant"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      <span>🐾</span>
+                      Project Details & Code
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 4 - Fit Mirror AI */}
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <div className="flex items-center gap-4 mb-6">
-                <div className="text-2xl font-bold text-indigo-600">2025</div>
+                <div className="text-2xl font-bold text-indigo-600">2024</div>
                 <div className="flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-full text-sm font-medium">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
