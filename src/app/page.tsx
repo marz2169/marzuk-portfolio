@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
@@ -1147,10 +1150,11 @@ export default function Home() {
               <div className="flex items-center gap-4 mb-6">
                 <div className="text-2xl font-bold text-orange-600">2025</div>
                 <div className="flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full text-sm font-medium shadow-lg">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src="/pawsistant-logo.svg"
                     alt="Pawsistant Logo"
+                    width={20}
+                    height={20}
                     className="w-5 h-5 rounded-full"
                   />
                   Pawsistant
@@ -1228,10 +1232,11 @@ export default function Home() {
                       pawsistant.me
                     </div>
                   </div>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src="/pawsistant-homepage.png"
                     alt="Pawsistant Live Website Homepage"
+                    width={800}
+                    height={400}
                     className="w-full h-auto"
                     style={{ maxHeight: '400px', objectFit: 'cover' }}
                   />
@@ -1400,7 +1405,7 @@ export default function Home() {
                       </svg>
                       🌐 Visit Live Website
                     </a>
-                    <a
+                    <Link
                       href="/projects/pawsistant"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
                     >
@@ -1409,7 +1414,7 @@ export default function Home() {
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
