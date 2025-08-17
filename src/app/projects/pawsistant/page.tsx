@@ -77,7 +77,7 @@ export default function PawsistantPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">Voice AI Conversations</h3>
               <p className="text-gray-600 leading-relaxed">
                 Natural language processing enables pet owners to have real conversations about 
-                their pet's health, behavior, and care needs through voice commands.
+                their pet’s health, behavior, and care needs through voice commands.
               </p>
             </div>
 
@@ -339,7 +339,7 @@ export default function PawsistantPage() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Demo Coming Soon</h3>
               <p className="text-gray-600 mb-6">
-                We're preparing an interactive demo where you can experience Pawsistant's 
+                We’re preparing an interactive demo where you can experience Pawsistant’s 
                 voice AI capabilities firsthand. Stay tuned for the live preview!
               </p>
               <div className="flex flex-wrap justify-center gap-4">
@@ -362,8 +362,7 @@ export default function PawsistantPage() {
       <section className="py-12 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/pawsistant-logo.svg" alt="Pawsistant Logo" className="w-8 h-8" />
+            <Image src="/pawsistant-logo.svg" alt="Pawsistant Logo" width={32} height={32} className="w-8 h-8" />
             <span className="text-xl font-bold">Pawsistant</span>
           </div>
           <p className="text-gray-400">
