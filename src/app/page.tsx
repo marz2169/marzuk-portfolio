@@ -863,8 +863,8 @@ export default function Home() {
 
                 <div className="mt-8 text-center">
                   <p className="text-gray-300 italic">
-                    "8+ years of diverse professional experience across sales, customer service, and management roles, 
-                    consistently delivering exceptional results while building strong relationships and driving operational excellence."
+                    “8+ years of diverse professional experience across sales, customer service, and management roles, 
+                    consistently delivering exceptional results while building strong relationships and driving operational excellence.”
                   </p>
                 </div>
               </div>
