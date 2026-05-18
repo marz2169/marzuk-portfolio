@@ -6,6 +6,7 @@ import { TrialBalanceSection } from "@/components/sections/TrialBalanceSection";
 import { IncomeStatementSection } from "@/components/sections/IncomeStatementSection";
 import { BalanceSheetSection } from "@/components/sections/BalanceSheetSection";
 import { ToolsUsed } from "@/components/ToolsUsed";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata = {
   title: "Full-Cycle Close FY22 | Marzuk Haider Chowdhury",
@@ -16,14 +17,18 @@ export const metadata = {
 export default function FullCyclePage() {
   return (
     <div className="min-h-screen bg-slate-50">
-      <header className="brand-bar text-white">
-        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between text-sm">
-          <Link href="/" className="font-semibold tracking-wide hover:text-white/85">
-            ← MARZUK HAIDER CHOWDHURY
-          </Link>
-          <span className="text-white/85">Full-Cycle Close, FY22</span>
-        </div>
-      </header>
+      <SiteHeader
+        variant="detail"
+        backHref="/"
+        pageTitle="Full-Cycle Close, FY22"
+        navLinks={[
+          { href: "#journal", label: "Journal" },
+          { href: "#t-accounts", label: "T-Accounts" },
+          { href: "#trial-balance", label: "Trial Balance" },
+          { href: "#income-statement", label: "Income Statement" },
+          { href: "#balance-sheet", label: "Balance Sheet" },
+        ]}
+      />
 
       <section className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">

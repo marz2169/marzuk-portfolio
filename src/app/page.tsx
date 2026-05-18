@@ -4,24 +4,14 @@ import { SAMPLES, COMPANY_LABEL } from "@/lib/work-samples";
 import { RedactedCompany } from "@/components/RedactedCompany";
 import { WorkSampleSection } from "@/components/WorkSampleSection";
 import { ToolsUsed } from "@/components/ToolsUsed";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export default function Home() {
   const uniqueCompanies = Array.from(new Set(SAMPLES.map((s) => s.company)));
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <header className="brand-bar text-white">
-        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between text-sm">
-          <span className="font-semibold tracking-wide">MARZUK HAIDER CHOWDHURY</span>
-          <nav className="hidden md:flex items-center gap-6 text-white/85">
-            <a href="#about" className="hover:text-white">About</a>
-            <a href="#featured" className="hover:text-white">Featured</a>
-            <a href="#samples" className="hover:text-white">Work Samples</a>
-            <a href="#skills" className="hover:text-white">Skills</a>
-            <a href="#contact" className="hover:text-white">Contact</a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader variant="home" />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-white border-b border-slate-200">
@@ -402,14 +392,35 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-slate-900 text-slate-300 py-8">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
-          <p>
-            &copy; {new Date().getFullYear()} Marzuk Haider Chowdhury. Figures
-            illustrative of work performed, with employer and client names
-            redacted for confidentiality.
-          </p>
-          <p className="text-slate-400">Built with Next.js. Deployed on Vercel.</p>
+      <footer className="relative bg-slate-950 text-slate-300 py-12 overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-30 pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 15% 50%, rgba(199, 154, 58, 0.18) 0%, transparent 40%), radial-gradient(circle at 85% 50%, rgba(30, 96, 145, 0.25) 0%, transparent 40%)",
+          }}
+          aria-hidden
+        />
+        <div className="relative max-w-6xl mx-auto px-6 flex flex-col gap-6">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--brand)] to-[var(--brand-2)] text-white font-bold text-sm shadow-md ring-1 ring-white/10">
+              MC
+            </span>
+            <div>
+              <p className="text-sm font-bold text-white">Marzuk Haider Chowdhury</p>
+              <p className="text-xs text-slate-400 uppercase tracking-[0.14em] font-semibold mt-0.5">
+                Accounting Portfolio &nbsp;·&nbsp; Burnaby, BC
+              </p>
+            </div>
+          </div>
+          <div className="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-400">
+            <p>
+              &copy; {new Date().getFullYear()} Marzuk Haider Chowdhury. Figures
+              illustrative of work performed, with employer and client names
+              redacted for confidentiality.
+            </p>
+            <p>Built with Next.js. Deployed on Vercel.</p>
+          </div>
         </div>
       </footer>
     </div>

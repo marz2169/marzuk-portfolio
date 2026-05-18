@@ -69,6 +69,13 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--rule);
   border-radius: 10px;
   padding: 1rem 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  border-color: #cbd5e1;
 }
 
 .ledger-table {
@@ -149,6 +156,18 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--brand-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--brand-2));
+  border-radius: 2px;
 }
 
 .btn-primary {
