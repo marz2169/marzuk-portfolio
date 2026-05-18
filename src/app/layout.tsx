@@ -13,9 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Marzuk Haider Chowdhury - Data Analytics Professional",
-  description: "Data Analytics Professional specializing in data visualization, SQL, R programming, and business intelligence. Google Data Analytics certified with experience in financial operations and customer service.",
-  keywords: "Data Analytics, SQL, R Programming, Data Visualization, Business Intelligence, Google Data Analytics, Marzuk Chowdhury",
+  title: "Marzuk Haider Chowdhury | Accounting Portfolio",
+  description:
+    "Accounting work portfolio of Marzuk Haider Chowdhury. Full-cycle financial statement preparation including general journal, T-accounts, trial balance, income statement and balance sheet. BCIT Diploma of Accounting candidate based in Burnaby, BC.",
+  keywords:
+    "Marzuk Chowdhury, Accounting Portfolio, Corporate Accountant Clerk, Financial Statements, Journal Entries, Trial Balance, Income Statement, Balance Sheet, BCIT Accounting, Burnaby BC",
   authors: [{ name: "Marzuk Haider Chowdhury" }],
   creator: "Marzuk Haider Chowdhury",
 };
@@ -28,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-50 text-slate-900`}
       >
         {children}
       </body>
