@@ -4,6 +4,7 @@ import { useState } from "react";
 import { JOURNAL_VARIANTS } from "@/lib/journal-variants";
 import { formatCurrency } from "@/lib/work-samples";
 import { VariantTabs } from "@/components/VariantTabs";
+import { ToolsUsed } from "@/components/ToolsUsed";
 
 export function JournalSection() {
   const [active, setActive] = useState(0);
@@ -20,6 +21,7 @@ export function JournalSection() {
             balanced debit and credit entry. Toggle the numbered tabs below to
             see ten different journal entry sets from my work.
           </p>
+          <ToolsUsed className="mt-4" tools={["Microsoft 365", "Xero", "SAP", "Microsoft Dynamics 365", "Excel"]} />
         </div>
 
         <VariantTabs variants={JOURNAL_VARIANTS} active={active} setActive={setActive} />

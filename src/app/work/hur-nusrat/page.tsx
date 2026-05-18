@@ -2,6 +2,7 @@ import Link from "next/link";
 import { RedactedCompany } from "@/components/RedactedCompany";
 import { formatCurrency } from "@/lib/work-samples";
 import { JournalSection } from "@/components/sections/JournalSection";
+import { ToolsUsed } from "@/components/ToolsUsed";
 
 export const metadata = {
   title: "Full-Cycle Close FY22 | Marzuk Haider Chowdhury",
@@ -32,6 +33,9 @@ export default function FullCyclePage() {
             <span className="text-sm text-slate-500">
               January 1 to December 31, 2022 &nbsp;·&nbsp; All figures in CAD
             </span>
+          </div>
+          <div className="mt-4">
+            <ToolsUsed tools={["Microsoft 365", "Xero", "SAP", "Microsoft Dynamics 365", "Excel"]} />
           </div>
           <p className="mt-6 text-slate-700 leading-relaxed max-w-3xl">
             This case study walks through the complete accounting cycle I prepared
@@ -88,6 +92,7 @@ export default function FullCyclePage() {
                 Each journal entry posted into its individual ledger account so
                 closing balances can be carried into the trial balance.
               </p>
+              <ToolsUsed className="mt-4" tools={["Microsoft 365", "Xero", "SAP", "Microsoft Dynamics 365", "Excel"]} />
               <div className="mt-5 p-4 rounded-lg bg-slate-50 border border-slate-200">
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">How I Prepared It</p>
                 <ul className="text-sm text-slate-700 space-y-2 list-disc pl-4">
@@ -152,6 +157,7 @@ export default function FullCyclePage() {
                 Listing of every account balance to confirm total debits equal
                 total credits before financial statements are produced.
               </p>
+              <ToolsUsed className="mt-4" tools={["Microsoft 365", "Xero", "SAP", "Microsoft Dynamics 365", "Excel"]} />
               <div className="mt-5 p-4 rounded-lg bg-slate-50 border border-slate-200">
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">How I Prepared It</p>
                 <ul className="text-sm text-slate-700 space-y-2 list-disc pl-4">
@@ -208,6 +214,7 @@ export default function FullCyclePage() {
                 Revenue by channel, cost of goods sold and operating expenses
                 leading to operating income, pre-tax profit and net income.
               </p>
+              <ToolsUsed className="mt-4" tools={["Microsoft 365", "Xero", "SAP", "Microsoft Dynamics 365", "Excel"]} />
               <div className="mt-5 p-4 rounded-lg bg-slate-50 border border-slate-200">
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">How I Prepared It</p>
                 <ul className="text-sm text-slate-700 space-y-2 list-disc pl-4">
@@ -277,6 +284,7 @@ export default function FullCyclePage() {
                 current ratio, debt-to-equity, working capital and return on
                 equity calculated on the closing position.
               </p>
+              <ToolsUsed className="mt-4" tools={["Microsoft 365", "Xero", "SAP", "Microsoft Dynamics 365", "Excel"]} />
               <div className="mt-5 p-4 rounded-lg bg-slate-50 border border-slate-200">
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">How I Prepared It</p>
                 <ul className="text-sm text-slate-700 space-y-2 list-disc pl-4">

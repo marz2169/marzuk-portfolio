@@ -1,5 +1,6 @@
 import { WorkSample, formatCurrency, formatNumber } from "@/lib/work-samples";
 import { RedactedCompany } from "./RedactedCompany";
+import { ToolsUsed } from "./ToolsUsed";
 
 function formatCell(value: string | number | null | undefined, columnHeader: string): string {
   if (value === null || value === undefined || value === "") return "";
@@ -44,6 +45,9 @@ export function WorkSampleSection({ sample }: { sample: WorkSample }) {
               {sample.title}
             </h3>
             <p className="mt-1 text-slate-600">{sample.subtitle}</p>
+            <div className="mt-3">
+              <ToolsUsed tools={["Microsoft 365", "Xero", "SAP", "Excel"]} />
+            </div>
             <div className="mt-4">
               <RedactedCompany company={sample.company} />
             </div>

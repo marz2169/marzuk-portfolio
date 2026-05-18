@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SAMPLES, COMPANY_LABEL } from "@/lib/work-samples";
 import { RedactedCompany } from "@/components/RedactedCompany";
 import { WorkSampleSection } from "@/components/WorkSampleSection";
+import { ToolsUsed } from "@/components/ToolsUsed";
 
 export default function Home() {
   const uniqueCompanies = Array.from(new Set(SAMPLES.map((s) => s.company)));
@@ -38,8 +39,13 @@ export default function Home() {
               at BCIT. This portfolio walks through eight pieces of accounting work
               I have prepared across the full cycle: financial statements, AP and
               AR processing, month-end journal entries, GL reconciliations and
-              indirect tax filings. Company names are redacted for confidentiality.
+              indirect tax filings. Every workbook below was prepared and
+              reconciled in Excel, Xero, SAP and Microsoft Dynamics 365. Company
+              names are redacted for confidentiality.
             </p>
+            <div className="mt-5">
+              <ToolsUsed tools={["Microsoft 365", "Xero", "SAP", "Microsoft Dynamics 365", "Excel"]} />
+            </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/work/hur-nusrat" className="btn-primary">
                 View Full-Cycle Statements
@@ -107,7 +113,11 @@ export default function Home() {
               across three engagements: a Dhaka fashion house I helped manage for
               six years, a Canadian foodservice provider, and a Vancouver-based
               direct-sales business. Client and employer names are redacted across
-              this portfolio.
+              this portfolio. Statements were prepared and reconciled across
+              <strong className="text-slate-900"> SAP</strong>,
+              <strong className="text-slate-900"> Microsoft Dynamics 365 Finance &amp; Operations</strong>,
+              <strong className="text-slate-900"> Xero</strong> and
+              <strong className="text-slate-900"> Excel</strong>.
             </p>
             <p>
               The work shown here is representative of the day-to-day output of a
@@ -305,13 +315,23 @@ export default function Home() {
               ]}
             />
             <SkillBlock
-              title="Software"
+              title="Accounting Software"
               items={[
-                "Microsoft Excel (advanced formulas, pivots)",
+                "SAP (full-cycle posting, period-end close)",
+                "Microsoft Dynamics 365 Finance & Operations",
+                "Xero (AP, AR, bank reconciliation)",
                 "QuickBooks Online",
-                "Xero",
-                "Salesforce, HubSpot CRM",
+                "Microsoft Excel (advanced formulas, pivots, Power Query)",
+              ]}
+            />
+            <SkillBlock
+              title="Productivity &amp; Collaboration"
+              items={[
+                "Microsoft 365 (Excel, Word, Outlook, Teams)",
                 "Google Workspace",
+                "Salesforce, HubSpot CRM",
+                "DocuSign and Adobe Acrobat",
+                "Asana and Notion",
               ]}
             />
             <SkillBlock
