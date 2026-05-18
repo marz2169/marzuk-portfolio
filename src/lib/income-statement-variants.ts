@@ -68,8 +68,8 @@ export const INCOME_STATEMENT_VARIANTS: IncomeStatementVariant[] = [
     summary:
       "Q1 2024 quarterly income statement. Strong wholesale orders shipped in January and February, retail picking up in March with new spring collection launch.",
     revenue: 398240,
-    netIncome: 47800,
-    netMargin: 0.12,
+    netIncome: 71899,
+    netMargin: 0.1806,
     grossProfit: 246240,
     lines: [
       { label: "REVENUE", amount: null, type: "header" },
@@ -100,8 +100,8 @@ export const INCOME_STATEMENT_VARIANTS: IncomeStatementVariant[] = [
     summary:
       "Foodservice operator Q1 income statement. Revenue from F&B sales and catering. Heavy variable labour and food cost structure; modest operating margin.",
     revenue: 297950,
-    netIncome: 18400,
-    netMargin: 0.062,
+    netIncome: 9930,
+    netMargin: 0.0333,
     grossProfit: 208750,
     lines: [
       { label: "REVENUE", amount: null, type: "header" },
@@ -133,8 +133,8 @@ export const INCOME_STATEMENT_VARIANTS: IncomeStatementVariant[] = [
     summary:
       "Direct-sales operation Q1 income statement. Multi-channel revenue (wholesale, retail, online). Sales commission expense and bad debt provision are material lines.",
     revenue: 377110,
-    netIncome: 36200,
-    netMargin: 0.096,
+    netIncome: 46774,
+    netMargin: 0.124,
     grossProfit: 234310,
     lines: [
       { label: "REVENUE", amount: null, type: "header" },

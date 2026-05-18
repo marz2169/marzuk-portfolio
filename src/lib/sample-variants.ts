@@ -53,6 +53,7 @@ const EXPENSE_REPORT_VARIANTS: SampleVariant[] = [
         ["11-Mar", "EXP-1044", "M. Tremblay", "Operations", "Parking, supplier site visit", "6320", 58, "Approved"],
         ["12-Mar", "EXP-1045", "P. Sharma", "Sales", "Hotel, regional conference", "6320", 428.9, "Approved"],
         ["14-Mar", "EXP-1046", "L. O'Connor", "Finance", "Professional membership", "6410", 215, "Query"],
+        ["18-Mar", "EXP-1047", "S. Mendez", "Design", "Courier, fabric sample delivery", "6510", 46.3, "Approved"],
         ["20-Mar", "EXP-1048", "D. Roy", "Logistics", "Safety equipment", "6210", 139.99, "Approved"],
         ["22-Mar", "EXP-1049", "A. Khan", "Marketing", "Campaign stock photos", "6610", 89, "Approved"],
         ["26-Mar", "EXP-1050", "M. Tremblay", "Operations", "Team meeting catering", "6310", 167.4, "Pending"],
@@ -206,9 +207,9 @@ const EXPENSE_REPORT_VARIANTS: SampleVariant[] = [
         ["19-Dec", "EXP-5405", "S. Mendez", "Studio December utilities", "6510", 142.8, "Approved"],
         ["22-Dec", "EXP-5406", "D. Roy", "Warehouse year-end supplies", "6210", 318.6, "Approved"],
         ["28-Dec", "EXP-5407", "K. Lee", "Q4 conference reimbursement", "6320", 540.6, "Approved"],
-        ["29-Dec", "EXP-5408", "P. Sharma", "Old receipt, Sep 2023 meal", "—", 89.5, "Rejected"],
+        ["29-Dec", "EXP-5408", "P. Sharma", "Old receipt, Sep 2023 meal", "n/a", 0, "Rejected"],
       ],
-      footer: [null, null, null, "TOTAL APPROVED", null, 3174.8, null],
+      footer: [null, null, null, "TOTAL APPROVED", null, 3173.8, null],
     },
   },
   {
@@ -361,7 +362,9 @@ const PAYMENTS_VARIANTS: SampleVariant[] = [
         ["08-Mar", "CHQ-10592", "Heritage Property Mgmt", "Cheque", "CAD", 9600, 9600],
         ["11-Mar", "EFT-20452", "Northern Trims & Notions", "EFT", "CAD", 7320.45, 7320.45],
         ["14-Mar", "WIR-00319", "Paris Embellishment Co.", "Wire", "USD", 11250, 15277.5],
+        ["12-Mar", "ONL-77103", "Hydro One", "Online", "CAD", 1880.16, 1880.16],
         ["18-Mar", "EFT-20453", "Runway Events Group", "EFT", "CAD", 28500, 28500],
+        ["20-Mar", "CHQ-10593", "Quebec Couriers Inc.", "Cheque", "CAD", 2140.75, 2140.75],
         ["22-Mar", "ONL-77104", "Bell Canada", "Online", "CAD", 640.3, 640.3],
         ["25-Mar", "EFT-20454", "Studio Lighting Solutions", "EFT", "CAD", 5460, 5460],
         ["27-Mar", "WIR-00320", "Lombardia Leather Goods", "Wire", "USD", 9400, 12694.7],
@@ -682,8 +685,10 @@ const CASH_RECEIPTS: SampleVariant[] = [
         ["12-Mar", "RCT-5514", "Coastal Department", "Wire", "SI-9004", 22150, 22150, "Fully Applied"],
         ["14-Mar", "RCT-5515", "Northern Apparel", "Cheque", "SI-9005", 6320, 6320, "Fully Applied"],
         ["18-Mar", "RCT-5516", "Urban Threads", "EFT", "SI-9009", 9480, 9480, "Fully Applied"],
+        ["20-Mar", "RCT-5517", "Evergreen Outfitters", "Online", "SI-9006", 3890.75, 3890.75, "Fully Applied"],
         ["22-Mar", "RCT-5518", "Pacific Boutiques", "EFT", "SI-9011", 11250, 11250, "Fully Applied"],
         ["25-Mar", "RCT-5519", "Coastal Department", "Wire", "SI-9008", 18600, 18600, "Fully Applied"],
+        ["27-Mar", "RCT-5520", "Maple Leaf Retail", "Cheque", "On Account", 5000, 5000, "Unapplied Credit"],
         ["29-Mar", "RCT-5521", "Northern Apparel", "EFT", "SI-9012", 7740, 7740, "Fully Applied"],
       ],
       footer: [null, null, "TOTAL RECEIPTS", null, null, 124756.25, 124756.25, null],
@@ -788,10 +793,10 @@ const CASH_RECEIPTS: SampleVariant[] = [
     process:
       "Payment gateway settlement file imported daily. Fees deducted automatically and posted to bank charges expense; net receipt applied to customer account.",
     metrics: [
-      { label: "Gross Receipts", value: "$42,800" },
-      { label: "Gateway Fees", value: "$1,240" },
-      { label: "Net Applied", value: "$41,560" },
-      { label: "Transactions", value: "18" },
+      { label: "Gross Receipts", value: "$42,770" },
+      { label: "Gateway Fees", value: "$640" },
+      { label: "Net Applied", value: "$42,130" },
+      { label: "Transactions", value: "9" },
     ],
     table: {
       headers: ["Date", "Gateway Ref", "Customer", "Method", "Gross", "Fee", "Net"],
@@ -806,7 +811,7 @@ const CASH_RECEIPTS: SampleVariant[] = [
         ["25-Apr", "ACH-44012", "Pacific Boutiques", "ACH", 12400, 0, 12400],
         ["29-Apr", "STR-99044", "Online Cust G", "Visa", 7840, 227, 7613],
       ],
-      footer: [null, null, null, "TOTAL", 42800, 640, 42160],
+      footer: [null, null, null, "TOTAL", 42770, 640, 42130],
     },
   },
   {
@@ -881,7 +886,7 @@ const CASH_RECEIPTS: SampleVariant[] = [
     metrics: [
       { label: "NSF Returns", value: "5" },
       { label: "Total NSF Value", value: "$8,420" },
-      { label: "Recovered", value: "$6,820" },
+      { label: "Recovered (incl. fees)", value: "$7,000" },
       { label: "Written Off", value: "$1,600" },
     ],
     table: {
@@ -893,7 +898,7 @@ const CASH_RECEIPTS: SampleVariant[] = [
         ["18-May", "CHQ-1422", "Style Co.", 1600, 45, 0, "Written Off"],
         ["22-May", "CHQ-1428", "Trend Buyers", 1600, 45, 1645, "Recovered"],
       ],
-      footer: [null, null, null, "TOTAL", 8420, 225, 6820, null],
+      footer: [null, null, "TOTAL", 8420, 225, 7000, null],
     },
   },
   {
@@ -1564,7 +1569,7 @@ const MONTH_END_JES: SampleVariant[] = [
         ["CL-04", "Retained Earnings", "3300", 50000, "", "Close dividends"],
         ["", "    Dividends Declared", "3210", "", 50000, ""],
       ],
-      footer: [null, "TOTAL", null, 3590000, 3590000, null],
+      footer: [null, "TOTAL", null, 3650000, 3650000, null],
     },
   },
 ];

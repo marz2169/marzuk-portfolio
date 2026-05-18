@@ -69,8 +69,8 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
     theme: "Month-End",
     summary:
       "March month-end trial balance post month-end JE package. New accounts added since FY22: GST/HST receivable and payable, FX gain account, accrued liabilities.",
-    totalDebits: 1842560,
-    totalCredits: 1842560,
+    totalDebits: 1852560,
+    totalCredits: 1852560,
     rows: [
       { account: "Cash, RBC Operating", type: "Asset", debit: 318420, credit: 0 },
       { account: "Cash, RBC USD", type: "Asset", debit: 56820, credit: 0 },
@@ -90,7 +90,7 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
       { account: "Income Tax Payable", type: "Liability", debit: 0, credit: 24850 },
       { account: "Notes Payable", type: "Liability", debit: 0, credit: 90000 },
       { account: "Common Shares", type: "Equity", debit: 0, credit: 600000 },
-      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 311920 },
+      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 159240 },
       { account: "Wholesale Revenue", type: "Revenue", debit: 0, credit: 218400 },
       { account: "Retail Revenue", type: "Revenue", debit: 0, credit: 174600 },
       { account: "Foreign Exchange Gain", type: "Revenue", debit: 0, credit: 5240 },
@@ -108,8 +108,8 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
     theme: "Month-End",
     summary:
       "Trial balance for a foodservice operator with high COGS turnover, low inventory and material payroll-driven costs. Tax accounts split across federal and provincial.",
-    totalDebits: 982400,
-    totalCredits: 982400,
+    totalDebits: 839600,
+    totalCredits: 839600,
     rows: [
       { account: "Cash, RBC Operating", type: "Asset", debit: 184500, credit: 0 },
       { account: "Petty Cash", type: "Asset", debit: 2000, credit: 0 },
@@ -127,7 +127,7 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
       { account: "QST Payable", type: "Liability", debit: 0, credit: 9180 },
       { account: "PST Payable, BC", type: "Liability", debit: 0, credit: 3920 },
       { account: "Common Shares", type: "Equity", debit: 0, credit: 200000 },
-      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 142800 },
+      { account: "Retained Earnings (Deficit)", type: "Equity", debit: 115535, credit: 0 },
       { account: "Food & Beverage Revenue", type: "Revenue", debit: 0, credit: 297950 },
       { account: "Food & Beverage COGS", type: "Expense", debit: 89200, credit: 0 },
       { account: "Salaries & Wages", type: "Expense", debit: 145800, credit: 0 },
@@ -148,8 +148,8 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
     theme: "Month-End",
     summary:
       "Trial balance for direct sales operation. Heavy AR position from wholesale customers, multiple revenue streams across channels, and commission expense lines.",
-    totalDebits: 924680,
-    totalCredits: 924680,
+    totalDebits: 786810,
+    totalCredits: 786810,
     rows: [
       { account: "Cash, RBC Operating", type: "Asset", debit: 124680, credit: 0 },
       { account: "Accounts Receivable, Trade", type: "Asset", debit: 196340, credit: 0 },
@@ -165,7 +165,7 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
       { account: "Salaries Payable", type: "Liability", debit: 0, credit: 16800 },
       { account: "GST/HST Payable", type: "Liability", debit: 0, credit: 31180 },
       { account: "Common Shares", type: "Equity", debit: 0, credit: 100000 },
-      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 184560 },
+      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 46690 },
       { account: "Wholesale Revenue", type: "Revenue", debit: 0, credit: 198400 },
       { account: "Retail Revenue", type: "Revenue", debit: 0, credit: 156200 },
       { account: "Online Revenue", type: "Revenue", debit: 0, credit: 22510 },
@@ -212,8 +212,8 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
     theme: "Half-Year",
     summary:
       "Mid-year trial balance for FY23 after first half of operations. Reflects inventory build-up for Fall/Winter collection and Spring/Summer wholesale shipments.",
-    totalDebits: 2148200,
-    totalCredits: 2148200,
+    totalDebits: 2045700,
+    totalCredits: 2045700,
     rows: [
       { account: "Cash", type: "Asset", debit: 248600, credit: 0 },
       { account: "Accounts Receivable", type: "Asset", debit: 384200, credit: 0 },
@@ -227,7 +227,7 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
       { account: "Accounts Payable", type: "Liability", debit: 0, credit: 245800 },
       { account: "Notes Payable", type: "Liability", debit: 0, credit: 105000 },
       { account: "Common Shares", type: "Equity", debit: 0, credit: 600000 },
-      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 226675 },
+      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 124175 },
       { account: "Wholesale Revenue", type: "Revenue", debit: 0, credit: 542000 },
       { account: "Retail Revenue", type: "Revenue", debit: 0, credit: 361225 },
       { account: "COGS", type: "Expense", debit: 380000, credit: 0 },
@@ -248,8 +248,8 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
     theme: "Year-End",
     summary:
       "FY23 year-end trial balance after full close, adjusting entries posted. Captured growth over prior year with higher AR, expanded inventory and updated reserves.",
-    totalDebits: 2842600,
-    totalCredits: 2842600,
+    totalDebits: 2573100,
+    totalCredits: 2573100,
     rows: [
       { account: "Cash", type: "Asset", debit: 198400, credit: 0 },
       { account: "Accounts Receivable", type: "Asset", debit: 412800, credit: 0 },
@@ -264,7 +264,7 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
       { account: "GST/HST Payable", type: "Liability", debit: 0, credit: 61800 },
       { account: "Income Tax Payable", type: "Liability", debit: 0, credit: 54200 },
       { account: "Common Shares", type: "Equity", debit: 0, credit: 100000 },
-      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 168700 },
+      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 208440 },
       { account: "Dividends", type: "Equity", debit: 40000, credit: 0 },
       { account: "Wholesale Revenue", type: "Revenue", debit: 0, credit: 884200 },
       { account: "Retail Revenue", type: "Revenue", debit: 0, credit: 642800 },
@@ -289,8 +289,8 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
     theme: "Year-End",
     summary:
       "FY23 foodservice operator year-end trial balance with high-volume revenue, payroll-heavy expense structure and multi-jurisdiction sales tax balances.",
-    totalDebits: 3416800,
-    totalCredits: 3416800,
+    totalDebits: 3332380,
+    totalCredits: 3332380,
     rows: [
       { account: "Cash", type: "Asset", debit: 124200, credit: 0 },
       { account: "Petty Cash", type: "Asset", debit: 2000, credit: 0 },
@@ -307,7 +307,7 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
       { account: "PST Payable", type: "Liability", debit: 0, credit: 12480 },
       { account: "Source Deductions Payable", type: "Liability", debit: 0, credit: 24820 },
       { account: "Common Shares", type: "Equity", debit: 0, credit: 200000 },
-      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 84420 },
+      { account: "Retained Earnings (Deficit)", type: "Equity", debit: 239380, credit: 0 },
       { account: "Food & Beverage Revenue", type: "Revenue", debit: 0, credit: 2475800 },
       { account: "Catering Revenue", type: "Revenue", debit: 0, credit: 200000 },
       { account: "F&B COGS", type: "Expense", debit: 742800, credit: 0 },
@@ -332,8 +332,8 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
     theme: "Quarterly",
     summary:
       "Q3 2023 trial balance reflecting Fall/Winter collection production cycle. Note increased finished goods inventory ahead of holiday selling season.",
-    totalDebits: 2486200,
-    totalCredits: 2486200,
+    totalDebits: 2474150,
+    totalCredits: 2474150,
     rows: [
       { account: "Cash", type: "Asset", debit: 296800, credit: 0 },
       { account: "Accounts Receivable", type: "Asset", debit: 412600, credit: 0 },
@@ -348,7 +348,7 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
       { account: "Salaries Payable", type: "Liability", debit: 0, credit: 18400 },
       { account: "Notes Payable", type: "Liability", debit: 0, credit: 97500 },
       { account: "Common Shares", type: "Equity", debit: 0, credit: 600000 },
-      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 226675 },
+      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 49300 },
       { account: "Wholesale Revenue", type: "Revenue", debit: 0, credit: 742000 },
       { account: "Retail Revenue", type: "Revenue", debit: 0, credit: 524800 },
       { account: "Licensing Income", type: "Revenue", debit: 0, credit: 45000 },
@@ -368,8 +368,8 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
     theme: "Case Study",
     summary:
       "Trial balance prepared for an intermediate accounting case study covering merchandising operations, AR aging, inventory FIFO and adjusting entries.",
-    totalDebits: 580400,
-    totalCredits: 580400,
+    totalDebits: 577520,
+    totalCredits: 577520,
     rows: [
       { account: "Cash", type: "Asset", debit: 48200, credit: 0 },
       { account: "Accounts Receivable", type: "Asset", debit: 92400, credit: 0 },
@@ -384,7 +384,7 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
       { account: "Unearned Revenue", type: "Liability", debit: 0, credit: 6000 },
       { account: "Notes Payable", type: "Liability", debit: 0, credit: 25000 },
       { account: "Common Shares", type: "Equity", debit: 0, credit: 80000 },
-      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 60000 },
+      { account: "Retained Earnings", type: "Equity", debit: 0, credit: 57120 },
       { account: "Dividends", type: "Equity", debit: 12000, credit: 0 },
       { account: "Sales Revenue", type: "Revenue", debit: 0, credit: 322780 },
       { account: "COGS", type: "Expense", debit: 168000, credit: 0 },
