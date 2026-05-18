@@ -258,7 +258,13 @@ export default function Home() {
           </p>
         </div>
         {SAMPLES.map((s) => (
-          <WorkSampleSection key={s.slug} sample={s} />
+          <WorkSampleSection
+            key={s.slug}
+            slug={s.slug}
+            fn={s.function}
+            title={s.title}
+            subtitle={s.subtitle}
+          />
         ))}
       </div>
 

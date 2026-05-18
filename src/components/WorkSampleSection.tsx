@@ -1,6 +1,11 @@
-import { WorkSample, formatCurrency, formatNumber } from "@/lib/work-samples";
+"use client";
+
+import { useState } from "react";
+import { formatCurrency, formatNumber } from "@/lib/work-samples";
+import { SAMPLE_SERIES, SampleVariant } from "@/lib/sample-variants";
 import { RedactedCompany } from "./RedactedCompany";
 import { ToolsUsed } from "./ToolsUsed";
+import { VariantTabs } from "./VariantTabs";
 
 function formatCell(value: string | number | null | undefined, columnHeader: string): string {
   if (value === null || value === undefined || value === "") return "";
@@ -14,7 +19,12 @@ function formatCell(value: string | number | null | undefined, columnHeader: str
     columnHeader.toLowerCase().includes("sales") ||
     columnHeader.toLowerCase().includes("collected") ||
     columnHeader.toLowerCase().includes("remit") ||
-    columnHeader.toLowerCase().includes("itc");
+    columnHeader.toLowerCase().includes("itc") ||
+    columnHeader.toLowerCase().includes("gross") ||
+    columnHeader.toLowerCase().includes("net") ||
+    columnHeader.toLowerCase().includes("fee") ||
+    columnHeader.toLowerCase().includes("paid") ||
+    columnHeader.toLowerCase().includes("cost");
   if (isCurrency && typeof value === "number") return formatCurrency(value);
   if (typeof value === "number") return formatNumber(value);
   return String(value);
@@ -24,52 +34,59 @@ function isNumeric(value: string | number | null | undefined): boolean {
   return typeof value === "number";
 }
 
-export function WorkSampleSection({ sample }: { sample: WorkSample }) {
+type Props = {
+  slug: string;
+  fn: string;
+  title: string;
+  subtitle: string;
+};
+
+export function WorkSampleSection({ slug, fn, title, subtitle }: Props) {
+  const [active, setActive] = useState(0);
+  const variants = SAMPLE_SERIES[slug];
+  if (!variants || variants.length === 0) return null;
+  const v: SampleVariant = variants[active];
+
   return (
     <section
-      id={sample.slug}
+      id={slug}
       className="py-12 md:py-16 border-b border-slate-200 scroll-mt-16"
     >
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12 mb-8">
+        <div className="mb-6">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-xs font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded uppercase tracking-wider">
+              {fn}
+            </span>
+          </div>
+          <h3 className="text-2xl md:text-3xl font-bold text-slate-900">{title}</h3>
+          <p className="mt-1 text-slate-600">{subtitle}</p>
+          <div className="mt-3">
+            <ToolsUsed tools={["Microsoft 365", "Xero", "SAP", "Excel"]} />
+          </div>
+        </div>
+
+        <VariantTabs variants={variants} active={active} setActive={setActive} />
+
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-xs font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded uppercase tracking-wider">
-                {sample.function}
-              </span>
-              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                {sample.period}
-              </span>
-            </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
-              {sample.title}
-            </h3>
-            <p className="mt-1 text-slate-600">{sample.subtitle}</p>
-            <div className="mt-3">
-              <ToolsUsed tools={["Microsoft 365", "Xero", "SAP", "Excel"]} />
-            </div>
-            <div className="mt-4">
-              <RedactedCompany company={sample.company} />
-            </div>
-            <p className="mt-5 text-sm text-slate-700 leading-relaxed">{sample.summary}</p>
+            <p className="mt-2 text-sm text-slate-700 leading-relaxed">{v.summary}</p>
             <div className="mt-5 p-4 rounded-lg bg-slate-50 border border-slate-200">
               <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
                 Process
               </p>
-              <p className="text-sm text-slate-700 leading-relaxed">{sample.process}</p>
+              <p className="text-sm text-slate-700 leading-relaxed">{v.process}</p>
             </div>
-            <a
-              href={sample.file}
-              download
-              className="btn-secondary mt-5 text-sm"
-            >
-              Download workbook (.xlsx)
-            </a>
+            {v.file && (
+              <a href={v.file} download className="btn-secondary mt-5 text-sm">
+                Download workbook (.xlsx)
+              </a>
+            )}
           </div>
 
           <div>
             <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
-              {sample.metrics.map((m) => (
+              {v.metrics.map((m) => (
                 <div key={m.label} className="kpi-card">
                   <dt className="text-xs uppercase tracking-wider text-slate-500">
                     {m.label}
@@ -85,7 +102,7 @@ export function WorkSampleSection({ sample }: { sample: WorkSample }) {
               <table className="ledger-table">
                 <thead>
                   <tr>
-                    {sample.table.headers.map((h, i) => (
+                    {v.table.headers.map((h, i) => (
                       <th
                         key={i}
                         className={
@@ -99,6 +116,11 @@ export function WorkSampleSection({ sample }: { sample: WorkSample }) {
                           h.toLowerCase().includes("collected") ||
                           h.toLowerCase().includes("remit") ||
                           h.toLowerCase().includes("itc") ||
+                          h.toLowerCase().includes("gross") ||
+                          h.toLowerCase().includes("net") ||
+                          h.toLowerCase().includes("fee") ||
+                          h.toLowerCase().includes("paid") ||
+                          h.toLowerCase().includes("cost") ||
                           h === "FX"
                             ? "num"
                             : ""
@@ -110,26 +132,20 @@ export function WorkSampleSection({ sample }: { sample: WorkSample }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {sample.table.rows.map((row, ri) => (
+                  {v.table.rows.map((row, ri) => (
                     <tr key={ri}>
                       {row.map((cell, ci) => (
-                        <td
-                          key={ci}
-                          className={isNumeric(cell) ? "num" : ""}
-                        >
-                          {formatCell(cell, sample.table.headers[ci])}
+                        <td key={ci} className={isNumeric(cell) ? "num" : ""}>
+                          {formatCell(cell, v.table.headers[ci])}
                         </td>
                       ))}
                     </tr>
                   ))}
-                  {sample.table.footer && (
+                  {v.table.footer && (
                     <tr className="total">
-                      {sample.table.footer.map((cell, ci) => (
-                        <td
-                          key={ci}
-                          className={isNumeric(cell) ? "num" : ""}
-                        >
-                          {formatCell(cell, sample.table.headers[ci])}
+                      {v.table.footer.map((cell, ci) => (
+                        <td key={ci} className={isNumeric(cell) ? "num" : ""}>
+                          {formatCell(cell, v.table.headers[ci])}
                         </td>
                       ))}
                     </tr>
