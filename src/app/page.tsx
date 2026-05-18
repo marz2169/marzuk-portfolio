@@ -69,7 +69,7 @@ export default function Home() {
             </dl>
           </div>
 
-          <div className="flex flex-col items-center md:items-end">
+          <div className="flex flex-col items-center">
             <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-white shadow-xl outline outline-1 outline-slate-200/70">
               <Image
                 src="/marzuk-grad.png"
@@ -80,9 +80,14 @@ export default function Home() {
                 priority
               />
             </div>
-            <div className="mt-6 text-sm text-slate-600 text-center md:text-right">
-              <p className="font-semibold text-slate-800">BCIT &nbsp;·&nbsp; Diploma of Accounting</p>
-              <p>Expected 2026 &nbsp;·&nbsp; GPA 3.2</p>
+            <div className="mt-5 w-56 md:w-64 text-center">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold tracking-wide">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                Open to Opportunities
+              </span>
+              <p className="mt-3 text-sm text-slate-700 leading-snug">
+                Building a career in corporate accounting through full-cycle work, reconciliations and clean schedules.
+              </p>
             </div>
           </div>
         </div>
@@ -346,11 +351,11 @@ export default function Home() {
               detail="Foundation studies en route to SFU and BCIT. Cumulative GPA 3.00."
             />
             <EducationItem
-              degree="GCE A Levels and O Levels"
+              degree="Pearson Edexcel A Levels and IGCSE"
               school="Mastermind English Medium School"
               location="Dhaka, Bangladesh"
               dates="2015 to 2019"
-              detail="Daily Star Award for Academic Excellence. Strong base in mathematics and business studies."
+              detail="A Levels: A* in both Accounting papers (Paper 1 and Paper 2). IGCSE: A* in Accounting. Daily Star Award for Academic Excellence."
             />
           </div>
         </div>
