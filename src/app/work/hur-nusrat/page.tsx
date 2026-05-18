@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { RedactedCompany } from "@/components/RedactedCompany";
 import { formatCurrency } from "@/lib/work-samples";
+import { JournalSection } from "@/components/sections/JournalSection";
 
 export const metadata = {
   title: "Full-Cycle Close FY22 | Marzuk Haider Chowdhury",
@@ -74,66 +75,7 @@ export default function FullCyclePage() {
         </div>
       </section>
 
-      {/* Statement 1: Journal */}
-      <section id="journal" className="py-12 md:py-16 border-b border-slate-200 scroll-mt-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12">
-            <div>
-              <p className="section-eyebrow">Statement 01</p>
-              <h2 className="mt-2 text-2xl md:text-3xl font-bold text-slate-900">General Journal</h2>
-              <p className="mt-3 text-slate-600">
-                Chronological record of every business transaction for the year,
-                each captured as a balanced debit and credit entry with a clear
-                narrative.
-              </p>
-              <div className="mt-5 p-4 rounded-lg bg-slate-50 border border-slate-200">
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">How I Prepared It</p>
-                <ul className="text-sm text-slate-700 space-y-2 list-disc pl-4">
-                  <li>Source transactions classified into 19 GL accounts using the chart of accounts.</li>
-                  <li>Year-end adjusting entries posted: depreciation, amortization, prepaid expiry, accrued wages, accrued tax.</li>
-                  <li>Balance check confirms total debits equal total credits at $6,281,325 across all 28 entries.</li>
-                </ul>
-              </div>
-            </div>
-            <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
-              <table className="ledger-table">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>JE</th>
-                    <th>Account</th>
-                    <th>Description</th>
-                    <th className="num">Debit</th>
-                    <th className="num">Credit</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {JOURNAL_ENTRIES.map((row, i) => (
-                    <tr key={i}>
-                      <td>{row.date}</td>
-                      <td>{row.je}</td>
-                      <td className={row.account.startsWith("    ") ? "pl-6 text-slate-600" : "font-medium"}>
-                        {row.account.trim()}
-                      </td>
-                      <td>{row.desc}</td>
-                      <td className="num tabular">{row.debit ? formatCurrency(row.debit) : ""}</td>
-                      <td className="num tabular">{row.credit ? formatCurrency(row.credit) : ""}</td>
-                    </tr>
-                  ))}
-                  <tr className="total">
-                    <td colSpan={4}>TOTAL, JOURNAL (Debits = Credits)</td>
-                    <td className="num tabular">$6,281,325</td>
-                    <td className="num tabular">$6,281,325</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div className="px-4 py-3 bg-emerald-50 border-t border-emerald-100">
-                <span className="balance-pill">In Balance</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <JournalSection />
 
       {/* Statement 2: T-Accounts */}
       <section id="t-accounts" className="py-12 md:py-16 border-b border-slate-200 scroll-mt-16 bg-white">
@@ -435,33 +377,6 @@ export default function FullCyclePage() {
     </div>
   );
 }
-
-const JOURNAL_ENTRIES = [
-  { date: "Jan 02", je: "J-01", account: "Cash", desc: "Issued common shares to founders to capitalize the business", debit: 600000, credit: 0 },
-  { date: "", je: "", account: "    Common Shares", desc: "", debit: 0, credit: 600000 },
-  { date: "Jan 04", je: "J-02", account: "Studio & Showroom Equipment", desc: "Bought equipment, part cash, part note", debit: 180000, credit: 0 },
-  { date: "", je: "", account: "    Cash", desc: "", debit: 0, credit: 60000 },
-  { date: "", je: "", account: "    Notes Payable", desc: "", debit: 0, credit: 120000 },
-  { date: "Jan 08", je: "J-03", account: "Intangible Assets, Brand & Designs", desc: "Trademark and design portfolio registration", debit: 90000, credit: 0 },
-  { date: "", je: "", account: "    Cash", desc: "", debit: 0, credit: 90000 },
-  { date: "Feb 01", je: "J-05", account: "Raw Materials & Fabric Inventory", desc: "Purchased fabrics on account", debit: 620000, credit: 0 },
-  { date: "", je: "", account: "    Accounts Payable", desc: "", debit: 0, credit: 620000 },
-  { date: "Mar 10", je: "J-07", account: "Finished Goods Inventory", desc: "Production run, fabric and labour into garments", debit: 720000, credit: 0 },
-  { date: "", je: "", account: "    Raw Materials & Fabric Inventory", desc: "", debit: 0, credit: 520000 },
-  { date: "", je: "", account: "    Cash", desc: "", debit: 0, credit: 200000 },
-  { date: "Apr 15", je: "J-09", account: "Accounts Receivable", desc: "Wholesale orders shipped on credit", debit: 980000, credit: 0 },
-  { date: "", je: "", account: "    Wholesale Revenue", desc: "", debit: 0, credit: 980000 },
-  { date: "Apr 15", je: "J-10", account: "Cost of Goods Sold", desc: "Cost of garments sold wholesale", debit: 392000, credit: 0 },
-  { date: "", je: "", account: "    Finished Goods Inventory", desc: "", debit: 0, credit: 392000 },
-  { date: "May 20", je: "J-11", account: "Cash", desc: "Direct-to-consumer sales at boutique and online", debit: 760000, credit: 0 },
-  { date: "", je: "", account: "    Retail Boutique Revenue", desc: "", debit: 0, credit: 760000 },
-  { date: "Aug 15", je: "J-16", account: "Salaries & Wages Expense", desc: "Paid atelier and retail staff", debit: 268000, credit: 0 },
-  { date: "", je: "", account: "    Cash", desc: "", debit: 0, credit: 268000 },
-  { date: "Dec 31", je: "J-24", account: "Depreciation Expense", desc: "Adjusting: equipment depreciation", debit: 30000, credit: 0 },
-  { date: "", je: "", account: "    Accumulated Depreciation", desc: "", debit: 0, credit: 30000 },
-  { date: "Dec 31", je: "J-28", account: "Income Tax Expense", desc: "Adjusting: accrued corporate income tax (25%)", debit: 92225, credit: 0 },
-  { date: "", je: "", account: "    Income Tax Payable", desc: "", debit: 0, credit: 92225 },
-];
 
 const KEY_T_ACCOUNTS = [
   { name: "Cash", debits: [600000, 760000, 400000, 60000], credits: [60000, 90000, 18000, 64000, 200000, 75000, 280000, 268000, 96000, 19000, 88000, 24000, 50000, 46000, 9600], balanceSide: "Dr" },
