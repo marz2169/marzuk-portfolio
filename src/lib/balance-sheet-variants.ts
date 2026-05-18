@@ -390,12 +390,12 @@ export const BALANCE_SHEET_VARIANTS: BalanceSheetVariant[] = [
     ],
   },
   {
-    label: "BCIT Case Study BS",
+    label: "Merchandising Case Study",
     period: "Practice Set",
     company: "fashion-house",
-    theme: "Academic",
+    theme: "Case Study",
     summary:
-      "Balance sheet prepared for a BCIT intermediate accounting case study. Classified balance sheet format with current and non-current sections distinguished.",
+      "Balance sheet prepared for an intermediate accounting case study. Classified balance sheet format with current and non-current sections distinguished.",
     totalAssets: 305380,
     totalLiabilities: 98600,
     totalEquity: 206780,

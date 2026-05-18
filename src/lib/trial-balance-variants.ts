@@ -362,12 +362,12 @@ export const TRIAL_BALANCE_VARIANTS: TrialBalanceVariant[] = [
     ],
   },
   {
-    label: "BCIT Case Study TB",
+    label: "Merchandising Case Study",
     period: "Practice Set",
     company: "fashion-house",
-    theme: "Academic",
+    theme: "Case Study",
     summary:
-      "Trial balance prepared for a BCIT intermediate accounting case study covering merchandising operations, AR aging, inventory FIFO and adjusting entries.",
+      "Trial balance prepared for an intermediate accounting case study covering merchandising operations, AR aging, inventory FIFO and adjusting entries.",
     totalDebits: 580400,
     totalCredits: 580400,
     rows: [

@@ -329,12 +329,12 @@ export const INCOME_STATEMENT_VARIANTS: IncomeStatementVariant[] = [
     ],
   },
   {
-    label: "BCIT Case Study IS",
+    label: "Merchandising Case Study",
     period: "Practice Set",
     company: "fashion-house",
-    theme: "Academic",
+    theme: "Case Study",
     summary:
-      "Income statement prepared for a BCIT intermediate accounting case study. Merchandising operations with sales returns, allowances and freight-out included.",
+      "Income statement prepared for an intermediate accounting case study. Merchandising operations with sales returns, allowances and freight-out included.",
     revenue: 322780,
     netIncome: 76660,
     netMargin: 0.238,

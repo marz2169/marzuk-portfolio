@@ -24,24 +24,33 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="bg-white border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-[1.4fr_1fr] gap-12 items-center">
+      <section className="relative overflow-hidden bg-white border-b border-slate-200">
+        <div
+          className="absolute inset-0 opacity-[0.4] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 20%, rgba(199, 154, 58, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 60%, rgba(11, 61, 89, 0.06) 0%, transparent 50%)",
+          }}
+          aria-hidden
+        />
+        <div className="absolute top-0 right-0 -translate-y-1/3 translate-x-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-amber-200/20 to-transparent blur-3xl pointer-events-none" aria-hidden />
+        <div className="relative max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-[1.4fr_1fr] gap-12 items-center">
           <div>
             <p className="section-eyebrow mb-3">Accounting Work Portfolio &nbsp;/&nbsp; 2026</p>
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
               Marzuk Haider Chowdhury
             </h1>
             <h2 className="mt-2 text-xl md:text-2xl text-slate-600 font-medium">
-              Corporate Accountant Clerk Candidate &nbsp;·&nbsp; Burnaby, BC
+              Accountant &nbsp;·&nbsp; Burnaby, BC
             </h2>
             <p className="mt-6 text-base md:text-lg text-slate-700 max-w-2xl leading-relaxed">
-              Detail-oriented accounting candidate finishing a Diploma of Accounting
-              at BCIT. This portfolio walks through eight pieces of accounting work
-              I have prepared across the full cycle: financial statements, AP and
-              AR processing, month-end journal entries, GL reconciliations and
-              indirect tax filings. Every workbook below was prepared and
-              reconciled in Excel, Xero, SAP and Microsoft Dynamics 365. Company
-              names are redacted for confidentiality.
+              Detail-oriented accountant with hands-on experience across the full
+              cycle. This portfolio walks through pieces of accounting work I
+              have prepared: financial statements, AP and AR processing,
+              month-end journal entries, GL reconciliations and indirect tax
+              filings. Every workbook below was prepared and reconciled in
+              Excel, Xero, SAP and Microsoft Dynamics 365. Company names are
+              redacted for confidentiality.
             </p>
             <div className="mt-5">
               <ToolsUsed tools={["Microsoft 365", "Xero", "SAP", "Microsoft Dynamics 365", "Excel"]} />
@@ -76,15 +85,18 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-white shadow-xl outline outline-1 outline-slate-200/70">
-              <Image
-                src="/marzuk-grad.png"
-                alt="Marzuk Haider Chowdhury"
-                width={320}
-                height={320}
-                className="w-full h-full object-cover"
-                priority
-              />
+            <div className="relative">
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-amber-200/40 via-sky-200/40 to-emerald-200/40 blur-2xl" aria-hidden />
+              <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-white shadow-xl outline outline-1 outline-slate-200/70">
+                <Image
+                  src="/marzuk-grad.png"
+                  alt="Marzuk Haider Chowdhury"
+                  width={320}
+                  height={320}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
             </div>
             <div className="mt-5 w-56 md:w-64 text-center">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold tracking-wide">
@@ -92,7 +104,7 @@ export default function Home() {
                 Open to Opportunities
               </span>
               <p className="mt-3 text-sm text-slate-700 leading-snug">
-                Building a career in corporate accounting through full-cycle work, reconciliations and clean schedules.
+                Full-cycle accounting work, reconciliations and clean audit-ready schedules.
               </p>
             </div>
           </div>
@@ -100,37 +112,37 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-16 md:py-20">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+      <section id="about" className="py-16 md:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-sky-50/40 to-transparent pointer-events-none" aria-hidden />
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 relative">
           <div>
             <p className="section-eyebrow">About</p>
             <h3 className="mt-2 text-3xl font-bold text-slate-900">Background &amp; Focus</h3>
           </div>
           <div className="md:col-span-2 space-y-5 text-slate-700 leading-relaxed">
             <p>
-              I am a final-year Diploma of Accounting student at the British
-              Columbia Institute of Technology, with hands-on accounting experience
-              across three engagements: a Dhaka fashion house I helped manage for
-              six years, a Canadian foodservice provider, and a Vancouver-based
-              direct-sales business. Client and employer names are redacted across
-              this portfolio. Statements were prepared and reconciled across
+              I am an accountant with hands-on experience across three
+              engagements: a Dhaka fashion house I helped manage for six years,
+              a Canadian foodservice provider, and a Vancouver-based
+              direct-sales business. Client and employer names are redacted
+              across this portfolio. Statements were prepared and reconciled
+              across
               <strong className="text-slate-900"> SAP</strong>,
               <strong className="text-slate-900"> Microsoft Dynamics 365 Finance &amp; Operations</strong>,
               <strong className="text-slate-900"> Xero</strong> and
               <strong className="text-slate-900"> Excel</strong>.
             </p>
             <p>
-              The work shown here is representative of the day-to-day output of a
-              Corporate Accountant Clerk: posting and approving journal entries,
-              processing accounts payable and accounts receivable, preparing
-              monthly reconciliations, supporting month-end close, and tracking
-              indirect tax filings against deadlines.
+              The work shown here is representative of full-cycle accounting:
+              posting and approving journal entries, processing accounts payable
+              and accounts receivable, preparing monthly reconciliations,
+              supporting month-end close, and tracking indirect tax filings
+              against deadlines.
             </p>
             <p>
-              I am applying for the Corporate Accountant Clerk role at Teck
-              Resources because the position rewards exactly the work I enjoy:
-              accurate posting, monthly reconciliations, and clean, audit-ready
-              supporting schedules.
+              I am looking for accounting roles that reward exactly the work I
+              enjoy: accurate posting, monthly reconciliations, and clean,
+              audit-ready supporting schedules.
             </p>
             <div className="grid sm:grid-cols-3 gap-3 pt-4">
               <div className="kpi-card">
@@ -354,54 +366,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Education */}
-      <section className="py-16 md:py-20 bg-white border-y border-slate-200">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-          <div>
-            <p className="section-eyebrow">Education</p>
-            <h3 className="mt-2 text-3xl font-bold text-slate-900">Academic Background</h3>
-          </div>
-          <div className="md:col-span-2 space-y-5">
-            <EducationItem
-              degree="Diploma of Accounting"
-              school="British Columbia Institute of Technology (BCIT)"
-              location="Burnaby, BC"
-              dates="2023 to 2026"
-              detail="Current GPA 3.2. Coursework in financial accounting, intermediate accounting, taxation, audit and Canadian GAAP."
-            />
-            <EducationItem
-              degree="Associate Certificate"
-              school="Fraser International College (FIC)"
-              location="Burnaby, BC"
-              dates="2022 to 2023"
-              detail="Foundation studies en route to SFU and BCIT. Cumulative GPA 3.00."
-            />
-            <EducationItem
-              degree="Pearson Edexcel A Levels and IGCSE"
-              school="Mastermind English Medium School"
-              location="Dhaka, Bangladesh"
-              dates="2015 to 2019"
-              detail="A Levels: A* in both Accounting papers (Paper 1 and Paper 2). IGCSE: A* in Accounting. Daily Star Award for Academic Excellence."
-            />
-          </div>
-        </div>
-      </section>
 
       {/* Contact */}
-      <section id="contact" className="py-16 md:py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section id="contact" className="py-16 md:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-sky-50/60 to-amber-50/40 pointer-events-none" aria-hidden />
+        <div className="max-w-4xl mx-auto px-6 text-center relative">
           <p className="section-eyebrow">Contact</p>
           <h3 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">
-            Available for the Corporate Accountant Clerk role
+            Available for accounting opportunities
           </h3>
           <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-            Happy to walk through any of these workbooks, share my reconciliation
-            approach in detail, or sit a short Excel exercise.
+            Happy to walk through any of these workbooks, share my
+            reconciliation approach in detail, or sit a short Excel exercise.
           </p>
-          <div className="mt-8 grid sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
-            <ContactCard label="Email" value="marzukchowdhury23@gmail.com" href="mailto:marzukchowdhury23@gmail.com" />
-            <ContactCard label="Phone" value="+1 236 866 7081" href="tel:+12368667081" />
+          <div className="mt-10 grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
             <ContactCard
+              icon={<span className="text-2xl">📧</span>}
+              label="Email"
+              value="marzukchowdhury23@gmail.com"
+              href="mailto:marzukchowdhury23@gmail.com"
+            />
+            <ContactCard
+              icon={<span className="text-2xl">📱</span>}
+              label="Phone"
+              value="+1 236 866 7081"
+              href="tel:+12368667081"
+            />
+            <ContactCard
+              icon={<LinkedInLogo />}
               label="LinkedIn"
               value="marzuk-chowdhury"
               href="https://www.linkedin.com/in/marzuk-chowdhury-741a951b7/"
@@ -483,44 +475,52 @@ function SkillBlock({ title, items }: { title: string; items: string[] }) {
   );
 }
 
-function EducationItem({
-  degree,
-  school,
-  location,
-  dates,
-  detail,
+function ContactCard({
+  icon,
+  label,
+  value,
+  href,
 }: {
-  degree: string;
-  school: string;
-  location: string;
-  dates: string;
-  detail: string;
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  href: string;
 }) {
-  return (
-    <div className="kpi-card">
-      <div className="flex items-start justify-between flex-wrap gap-2">
-        <div>
-          <p className="font-bold text-slate-900">{degree}</p>
-          <p className="text-sm brand-text font-semibold">{school}</p>
-          <p className="text-xs text-slate-500">{location}</p>
-        </div>
-        <span className="text-xs font-semibold text-slate-500 tabular">{dates}</span>
-      </div>
-      <p className="mt-3 text-sm text-slate-700">{detail}</p>
-    </div>
-  );
-}
-
-function ContactCard({ label, value, href }: { label: string; value: string; href: string }) {
   return (
     <a
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-      className="kpi-card text-left hover:border-slate-300 transition-colors block"
+      className="group relative bg-white border border-slate-200 rounded-2xl p-5 text-left hover:border-[var(--brand)] hover:shadow-lg hover:-translate-y-1 transition-all duration-200 block"
     >
-      <p className="text-xs uppercase tracking-wider text-slate-500">{label}</p>
-      <p className="mt-1 text-sm font-semibold brand-text break-all">{value}</p>
+      <div className="flex items-center gap-3">
+        <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-slate-50 group-hover:bg-[var(--brand)]/10 transition-colors">
+          {icon}
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">
+            {label}
+          </p>
+          <p className="mt-0.5 text-sm font-semibold brand-text break-all">
+            {value}
+          </p>
+        </div>
+      </div>
     </a>
+  );
+}
+
+function LinkedInLogo() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="22"
+      height="22"
+      fill="#0A66C2"
+      aria-hidden
+    >
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.78 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
   );
 }
