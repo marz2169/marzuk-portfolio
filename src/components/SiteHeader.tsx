@@ -28,17 +28,17 @@ export function SiteHeader({
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/75 border-b border-slate-200/60 shadow-[0_1px_0_0_rgba(15,23,42,0.04)]">
-      <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-amber-300/40 to-transparent pointer-events-none" />
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-slate-200/50 shadow-[0_1px_0_0_rgba(15,23,42,0.03)]">
+      <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-[var(--accent)]/40 to-transparent pointer-events-none" />
       <div className="max-w-6xl mx-auto px-5 sm:px-6 py-3 flex items-center justify-between gap-4">
         {/* Logo / Monogram */}
         <Link
           href={variant === "detail" && backHref ? backHref : "/"}
           className="flex items-center gap-3 group shrink-0"
         >
-          <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--brand)] via-[var(--brand-2)] to-[var(--brand)] text-white font-bold text-sm shadow-md ring-1 ring-white/20">
+          <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--brand)] via-[var(--brand-2)] to-[var(--brand-deep)] text-white font-semibold text-sm shadow-md ring-1 ring-white/20">
             <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/10 to-transparent" />
-            <span className="relative tracking-tight">MC</span>
+            <span className="relative tracking-tight display-font font-medium">MC</span>
             <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white" />
           </span>
           {variant === "home" ? (

@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
+  --background: #fafaf7;
   --foreground: #0f172a;
-  --brand: #0b3d59;
-  --brand-2: #1e6091;
-  --accent: #c79a3a;
-  --rule: #e2e8f0;
+  /* Cohesive palette: deep teal primary + warm gold accent */
+  --brand: #0e4f54;         /* deep teal — primary */
+  --brand-2: #115e59;       /* slightly lighter teal for gradients */
+  --brand-deep: #064148;    /* darker teal for hover/active */
+  --accent: #b88a3e;        /* warm gold — single warm accent */
+  --accent-soft: #f7efe1;   /* gold tint for backgrounds */
+  --rule: #e7e3da;          /* warm-leaning rule color */
+  --surface: #ffffff;
 }
 
 @theme inline {
@@ -26,6 +30,34 @@ body {
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
   -webkit-tap-highlight-color: transparent;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(14, 79, 84, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(184, 138, 62, 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(14, 79, 84, 0.03) 0px, transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Subtle paper grain texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+main, header, footer, section, div {
+  position: relative;
+}
+
+/* Display font for refined headings */
+.display-font {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-feature-settings: "ss01", "ss02";
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
 }
 
 /* Better mobile table scrolling */
@@ -54,6 +86,30 @@ body {
 .fade-up-3 { animation-delay: 0.25s; }
 .fade-up-4 { animation-delay: 0.35s; }
 
+/* Scroll-triggered fade-in (used with the ScrollFadeIn component) */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-fade.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-fade {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .fade-up {
+    animation: none;
+  }
+}
+
 /* Mobile scroll padding so anchor jumps clear the floating nav */
 @media (max-width: 1023px) {
   html {
@@ -65,6 +121,23 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   letter-spacing: -0.02em;
   color: #0f172a;
+}
+
+/* Refined display treatment for hero h1 and section h2/h3 */
+.display-heading {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-feature-settings: "ss01";
+  font-optical-sizing: auto;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+h2.display-heading,
+h3.display-heading {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .brand-bar {
@@ -85,31 +158,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .statement-card {
-  background: #ffffff;
+  background: var(--surface);
   border: 1px solid var(--rule);
-  border-radius: 14px;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border-radius: 16px;
+  box-shadow: 0 1px 0 0 rgba(15, 23, 42, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .statement-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06), 0 12px 32px rgba(15, 23, 42, 0.08);
-  border-color: #cbd5e1;
+  box-shadow: 0 1px 0 0 rgba(15, 23, 42, 0.02),
+    0 16px 40px -12px rgba(14, 79, 84, 0.18),
+    0 4px 12px -4px rgba(15, 23, 42, 0.08);
+  border-color: rgba(14, 79, 84, 0.3);
 }
 
 .kpi-card {
-  background: #ffffff;
+  background: var(--surface);
   border: 1px solid var(--rule);
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 1rem 1.25rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 1px 0 0 rgba(15, 23, 42, 0.02);
 }
 
 .kpi-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
-  border-color: #cbd5e1;
+  box-shadow: 0 1px 0 0 rgba(15, 23, 42, 0.02),
+    0 8px 24px -8px rgba(14, 79, 84, 0.12),
+    0 2px 6px -2px rgba(15, 23, 42, 0.06);
+  border-color: rgba(14, 79, 84, 0.25);
 }
 
 .ledger-table {
@@ -210,16 +288,20 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.5rem;
   background: var(--brand);
   color: #ffffff;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 2px rgba(14, 79, 84, 0.2),
+    0 4px 12px -4px rgba(14, 79, 84, 0.3);
 }
 
 .btn-primary:hover {
-  background: #082b3f;
+  background: var(--brand-deep);
   transform: translateY(-1px);
+  box-shadow: 0 1px 2px rgba(14, 79, 84, 0.2),
+    0 10px 24px -6px rgba(14, 79, 84, 0.4);
 }
 
 .btn-secondary {

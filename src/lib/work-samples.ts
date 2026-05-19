@@ -1,15 +1,17 @@
 export type Company = "fashion-house" | "foodservice" | "direct-sales";
 
+// These represent the three illustrative case-study scenarios used across
+// the practice projects, modelled on real-world business types.
 export const COMPANY_LABEL: Record<Company, string> = {
-  "fashion-house": "Fashion House",
-  foodservice: "Foodservice Provider",
-  "direct-sales": "Direct Sales Co.",
+  "fashion-house": "Fashion Retail",
+  foodservice: "Foodservice Operations",
+  "direct-sales": "Direct Sales",
 };
 
-export const COMPANY_REDACTED_PLACEHOLDER: Record<Company, string> = {
-  "fashion-house": "█████████████",
-  foodservice: "███████████████",
-  "direct-sales": "█████████",
+export const SCENARIO_DETAIL: Record<Company, string> = {
+  "fashion-house": "Wholesale + retail apparel scenario with USD vendor imports",
+  foodservice: "High-volume hospitality scenario with payroll-heavy operations",
+  "direct-sales": "Multi-channel sales scenario with AR concentration",
 };
 
 export type WorkSample = {

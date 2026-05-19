@@ -33,10 +33,10 @@ export default function FullCyclePage() {
       <section className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
           <p className="section-eyebrow">Featured Case Study</p>
-          <h1 className="mt-2 text-3xl md:text-5xl font-bold text-slate-900">
+          <h1 className="display-heading mt-3 text-4xl md:text-6xl text-slate-900">
             Full Accounting Cycle, Fiscal Year 2022
           </h1>
-          <div className="mt-4 flex items-center gap-4 flex-wrap">
+          <div className="mt-5 flex items-center gap-4 flex-wrap">
             <RedactedCompany company="fashion-house" />
             <span className="text-sm text-slate-500">
               January 1 to December 31, 2022 &nbsp;·&nbsp; All figures in CAD
@@ -46,12 +46,13 @@ export default function FullCyclePage() {
             <ToolsUsed tools={["Microsoft 365", "Xero", "SAP", "Microsoft Dynamics 365", "Excel"]} />
           </div>
           <p className="mt-6 text-slate-700 leading-relaxed max-w-3xl">
-            This case study walks through the complete accounting cycle I prepared
-            for a Dhaka-based fashion house: 28 journal entries, posted into 19
-            ledger accounts, summarised in a balanced trial balance and presented
-            as an income statement and balance sheet. Each statement includes its
-            own internal balance check, and the balance sheet closes with four
-            financial ratios calculated on the year-end position.
+            This case study walks through the complete accounting cycle for an
+            illustrative fashion-retail practice project: 28 journal entries,
+            posted into 19 ledger accounts, summarised in a balanced trial
+            balance and presented as an income statement and balance sheet.
+            Each statement includes its own internal balance check, and the
+            balance sheet closes with four financial ratios calculated on the
+            year-end position.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
@@ -122,8 +123,8 @@ export default function FullCyclePage() {
       <footer className="bg-slate-950 text-slate-400 py-6">
         <div className="max-w-6xl mx-auto px-6 text-sm text-center">
           <p>
-            Draft prepared for internal review. Unaudited. Figures illustrative,
-            employer name redacted for confidentiality.
+            Illustrative practice project. Figures and entities are
+            instructional, modelled on a realistic fashion-retail scenario.
           </p>
         </div>
       </footer>

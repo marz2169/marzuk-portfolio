@@ -6,6 +6,7 @@ import { WorkSampleSection } from "@/components/WorkSampleSection";
 import { ToolsUsed } from "@/components/ToolsUsed";
 import { SiteHeader } from "@/components/SiteHeader";
 import { MobileQuickNav } from "@/components/MobileQuickNav";
+import { ScrollFadeIn } from "@/components/ScrollFadeIn";
 
 export default function Home() {
   const uniqueCompanies = Array.from(new Set(SAMPLES.map((s) => s.company)));
@@ -29,20 +30,20 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-[1.4fr_1fr] gap-12 items-center">
           <div>
             <p className="section-eyebrow mb-3 fade-up fade-up-1">Accounting Work Portfolio &nbsp;/&nbsp; 2026</p>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight fade-up fade-up-2">
+            <h1 className="display-heading text-5xl md:text-6xl text-slate-900 fade-up fade-up-2">
               Marzuk Haider Chowdhury
             </h1>
-            <h2 className="mt-2 text-xl md:text-2xl text-slate-600 font-medium fade-up fade-up-3">
-              Accountant &nbsp;·&nbsp; Burnaby, BC
+            <h2 className="mt-3 text-xl md:text-2xl text-slate-600 font-medium fade-up fade-up-3">
+              Accountant &nbsp;<span className="text-slate-300">·</span>&nbsp; Burnaby, BC
             </h2>
             <p className="mt-6 text-base md:text-lg text-slate-700 max-w-2xl leading-relaxed">
-              Detail-oriented accountant with hands-on experience across the full
-              cycle. This portfolio walks through pieces of accounting work I
-              have prepared: financial statements, AP and AR processing,
-              month-end journal entries, GL reconciliations and indirect tax
-              filings. Every workbook below was prepared and reconciled in
-              Excel, Xero, SAP and Microsoft Dynamics 365. Company names are
-              redacted for confidentiality.
+              Detail-oriented accountant working through a portfolio of
+              full-cycle accounting practice projects. Each case study models
+              a realistic business scenario, covering financial statements,
+              AP and AR processing, month-end journal entries, GL
+              reconciliations and indirect tax filings. Every workbook was
+              prepared and reconciled in Excel, Xero, SAP and Microsoft
+              Dynamics 365.
             </p>
             <div className="mt-5">
               <ToolsUsed tools={["Microsoft 365", "Xero", "SAP", "Microsoft Dynamics 365", "Excel"]} />
@@ -57,22 +58,42 @@ export default function Home() {
               </a>
             </div>
             <dl className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
-              <div className="kpi-card">
-                <dt className="text-xs uppercase tracking-wider text-slate-500">Work Samples</dt>
-                <dd className="mt-1 text-2xl font-semibold brand-text tabular">9</dd>
-              </div>
-              <div className="kpi-card">
-                <dt className="text-xs uppercase tracking-wider text-slate-500">Function Areas</dt>
-                <dd className="mt-1 text-2xl font-semibold brand-text tabular">8</dd>
-              </div>
-              <div className="kpi-card">
-                <dt className="text-xs uppercase tracking-wider text-slate-500">Engagements</dt>
-                <dd className="mt-1 text-2xl font-semibold brand-text tabular">{uniqueCompanies.length}</dd>
-              </div>
-              <div className="kpi-card">
-                <dt className="text-xs uppercase tracking-wider text-slate-500">Period</dt>
-                <dd className="mt-1 text-2xl font-semibold brand-text tabular">FY22-24</dd>
-              </div>
+              <StatCard
+                label="Work Samples"
+                value="9"
+                icon={
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                }
+              />
+              <StatCard
+                label="Function Areas"
+                value="8"
+                icon={
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                  </svg>
+                }
+              />
+              <StatCard
+                label="Case Studies"
+                value={uniqueCompanies.length.toString()}
+                icon={
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                }
+              />
+              <StatCard
+                label="Period"
+                value="FY22-24"
+                icon={
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                }
+              />
             </dl>
           </div>
 
@@ -109,32 +130,32 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 relative">
           <div>
             <p className="section-eyebrow">About</p>
-            <h3 className="mt-2 text-3xl font-bold text-slate-900">Background &amp; Focus</h3>
+            <h3 className="display-heading mt-3 text-3xl md:text-4xl text-slate-900">Background &amp; Focus</h3>
           </div>
           <div className="md:col-span-2 space-y-5 text-slate-700 leading-relaxed">
             <p>
-              I am an accountant with hands-on experience across three
-              engagements: a Dhaka fashion house I helped manage for six years,
-              a Canadian foodservice provider, and a Vancouver-based
-              direct-sales business. Client and employer names are redacted
-              across this portfolio. Statements were prepared and reconciled
-              across
+              This portfolio is a set of <strong className="text-slate-900">full-cycle accounting practice projects</strong> I built to demonstrate
+              the day-to-day craft of corporate accounting. Each case study
+              models a realistic business scenario — a fashion retailer, a
+              foodservice operator and a multi-channel direct-sales business — and
+              walks through journal entries, ledger postings, trial balances,
+              financial statements, AP and AR processing, monthly close and
+              indirect tax filings.
+            </p>
+            <p>
+              The numbers are illustrative, but the work is the work: every
+              entry balances, every reconciliation ties, every statement
+              follows Canadian accounting conventions. The workbooks were
+              prepared and reconciled in
               <strong className="text-slate-900"> SAP</strong>,
               <strong className="text-slate-900"> Microsoft Dynamics 365 Finance &amp; Operations</strong>,
               <strong className="text-slate-900"> Xero</strong> and
               <strong className="text-slate-900"> Excel</strong>.
             </p>
             <p>
-              The work shown here is representative of full-cycle accounting:
-              posting and approving journal entries, processing accounts payable
-              and accounts receivable, preparing monthly reconciliations,
-              supporting month-end close, and tracking indirect tax filings
-              against deadlines.
-            </p>
-            <p>
-              I am looking for accounting roles that reward exactly the work I
-              enjoy: accurate posting, monthly reconciliations, and clean,
-              audit-ready supporting schedules.
+              I am looking for accounting roles that reward exactly this kind
+              of craft: accurate posting, disciplined monthly reconciliations,
+              and clean, audit-ready supporting schedules.
             </p>
             <div className="grid sm:grid-cols-3 gap-3 pt-4">
               <div className="kpi-card">
@@ -160,7 +181,7 @@ export default function Home() {
           <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
             <div>
               <p className="section-eyebrow">Featured Work</p>
-              <h3 className="mt-2 text-3xl font-bold text-slate-900">
+              <h3 className="display-heading mt-3 text-3xl md:text-4xl text-slate-900">
                 Full-Cycle Close, FY22
               </h3>
               <div className="mt-3 flex items-center gap-3 flex-wrap">
@@ -179,9 +200,9 @@ export default function Home() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {FEATURED_STATEMENTS.map((s) => (
+            {FEATURED_STATEMENTS.map((s, i) => (
+              <ScrollFadeIn key={s.id} delay={i * 60}>
               <Link
-                key={s.id}
                 href={`/work/hur-nusrat#${s.id}`}
                 className="statement-card p-6 block"
               >
@@ -198,6 +219,7 @@ export default function Home() {
                   <span className="font-semibold brand-text tabular">{s.metric.value}</span>
                 </div>
               </Link>
+              </ScrollFadeIn>
             ))}
           </div>
         </div>
@@ -208,20 +230,20 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-10 max-w-3xl">
             <p className="section-eyebrow">Work Samples</p>
-            <h3 className="mt-2 text-3xl font-bold text-slate-900">
+            <h3 className="display-heading mt-3 text-3xl md:text-4xl text-slate-900">
               Nine pieces of operational accounting work
             </h3>
             <p className="mt-3 text-slate-600">
               Each card links to a detailed walkthrough below with the source
-              workbook available to download. Company names are blurred for
-              confidentiality, but every figure shown is real preparation work.
+              workbook available to download. Every sample is an illustrative
+              practice project modelled on a real-world business scenario.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {SAMPLES.map((s) => (
+            {SAMPLES.map((s, i) => (
+              <ScrollFadeIn key={s.slug} delay={i * 40}>
               <a
-                key={s.slug}
                 href={`#${s.slug}`}
                 className="statement-card p-5 block"
               >
@@ -245,6 +267,7 @@ export default function Home() {
                   </p>
                 </div>
               </a>
+              </ScrollFadeIn>
             ))}
           </div>
         </div>
@@ -254,11 +277,11 @@ export default function Home() {
       <div className="bg-white border-t border-slate-200">
         <div className="max-w-6xl mx-auto px-6 pt-16 pb-4">
           <p className="section-eyebrow">Walkthroughs</p>
-          <h3 className="mt-2 text-3xl font-bold text-slate-900">Sample details</h3>
+          <h3 className="display-heading mt-3 text-3xl md:text-4xl text-slate-900">Sample details</h3>
           <p className="mt-2 text-slate-600 max-w-3xl">
-            Each section below shows the engagement, the function area, key
-            figures, the actual data prepared and the underlying process I
-            followed. Download the source workbook on any sample.
+            Each section below shows the case-study scenario, the function
+            area, key figures, the data prepared and the process I followed.
+            Download the source workbook on any sample.
           </p>
         </div>
         {SAMPLES.map((s) => (
@@ -277,7 +300,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
           <div>
             <p className="section-eyebrow">Skills</p>
-            <h3 className="mt-2 text-3xl font-bold text-slate-900">Tools &amp; Techniques</h3>
+            <h3 className="display-heading mt-3 text-3xl md:text-4xl text-slate-900">Tools &amp; Techniques</h3>
             <p className="mt-3 text-slate-600">
               The skills I rely on for full-cycle close, AP and AR processing,
               reconciliation and reporting work.
@@ -364,7 +387,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-sky-50/60 to-amber-50/40 pointer-events-none" aria-hidden />
         <div className="max-w-4xl mx-auto px-6 text-center relative">
           <p className="section-eyebrow">Contact</p>
-          <h3 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">
+          <h3 className="display-heading mt-3 text-3xl md:text-5xl text-slate-900">
             Available for accounting opportunities
           </h3>
           <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
@@ -417,9 +440,9 @@ export default function Home() {
           </div>
           <div className="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-400">
             <p>
-              &copy; {new Date().getFullYear()} Marzuk Haider Chowdhury. Figures
-              illustrative of work performed, with employer and client names
-              redacted for confidentiality.
+              &copy; {new Date().getFullYear()} Marzuk Haider Chowdhury.
+              Illustrative practice projects prepared to demonstrate
+              full-cycle accounting skills.
             </p>
             <p>Built with Next.js. Deployed on Vercel.</p>
           </div>
@@ -471,6 +494,32 @@ const FEATURED_STATEMENTS = [
     metric: { label: "Total Assets", value: "$1,400,900" },
   },
 ];
+
+function StatCard({
+  label,
+  value,
+  icon,
+}: {
+  label: string;
+  value: string;
+  icon: React.ReactNode;
+}) {
+  return (
+    <div className="group kpi-card relative overflow-hidden">
+      <div className="flex items-start justify-between">
+        <dt className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">
+          {label}
+        </dt>
+        <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-teal-50 text-teal-700 group-hover:bg-teal-100 transition-colors">
+          {icon}
+        </span>
+      </div>
+      <dd className="mt-2 text-2xl font-semibold display-font brand-text tabular leading-none">
+        {value}
+      </dd>
+    </div>
+  );
+}
 
 function SkillBlock({ title, items }: { title: string; items: string[] }) {
   return (
