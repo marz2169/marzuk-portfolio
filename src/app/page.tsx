@@ -27,7 +27,7 @@ export default function Home() {
           aria-hidden
         />
         <div className="absolute top-0 right-0 -translate-y-1/3 translate-x-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-amber-200/20 to-transparent blur-3xl pointer-events-none" aria-hidden />
-        <div className="relative max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-[1.4fr_1fr] gap-12 items-center">
+        <div className="relative max-w-6xl mx-auto px-6 py-12 md:py-20 lg:py-24 grid md:grid-cols-[1.4fr_1fr] gap-10 lg:gap-14 items-start">
           <div>
             <p className="section-eyebrow mb-3 fade-up fade-up-1">Accounting Work Portfolio &nbsp;/&nbsp; 2026</p>
             <h1 className="display-heading text-5xl md:text-6xl text-slate-900 fade-up fade-up-2">
