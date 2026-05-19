@@ -17,7 +17,7 @@ export function TAccountSection() {
   const totalDr = debitTotal + (isDebitNature ? opening : 0);
   const totalCr = creditTotal + (isDebitNature ? 0 : opening);
   const net = totalDr - totalCr;
-  const balanceSide = net === 0 ? "—" : net > 0 ? "Dr" : "Cr";
+  const balanceSide = net === 0 ? "Nil" : net > 0 ? "Dr" : "Cr";
   const closingBalance = Math.abs(net);
 
   return (

@@ -101,11 +101,12 @@ export default function FullCyclePage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="section-eyebrow text-amber-400">Next</p>
           <h3 className="mt-2 text-2xl md:text-3xl font-bold text-white">
-            Want to see operational AP, AR, close and tax work too?
+            Want to see operational AP, AR, close, tax and reporting work too?
           </h3>
           <p className="mt-3 text-slate-300">
-            Browse seven more samples covering payments, receipts, month-end
-            journal entries, GL reconciliations and indirect tax filings.
+            Browse nine more samples covering payments, receipts, month-end
+            journal entries, GL reconciliations, indirect tax filings, vendor
+            master data and ad hoc management reports.
           </p>
           <div className="mt-6 flex gap-3 justify-center flex-wrap">
             <Link href="/#samples" className="btn-primary bg-amber-500 hover:bg-amber-400 text-slate-900 text-sm" style={{ background: "#fbbf24", color: "#0f172a" }}>
