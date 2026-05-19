@@ -15,13 +15,13 @@ export const COMPANY_REDACTED_PLACEHOLDER: Record<Company, string> = {
 export type WorkSample = {
   slug: string;
   company: Company;
-  function: "AP" | "AR" | "GL" | "Close" | "Tax" | "Recon" | "Full Cycle";
+  function: "AP" | "AR" | "GL" | "Close" | "Tax" | "Recon" | "Full Cycle" | "Master Data" | "Report";
   title: string;
   subtitle: string;
   period: string;
   summary: string;
   process: string;
-  file: string;
+  file?: string;
   metrics: { label: string; value: string }[];
   table: {
     headers: string[];
@@ -297,6 +297,66 @@ export const SAMPLES: WorkSample[] = [
         ["GST/HST", "Annual", "FY 2023", "Federal", 3640000, 473200, 168400, 304800, "30-Jun", "Not Started"],
       ],
       footer: [null, null, null, "TOTAL", 5725400, 728800.55, 246830, 481970.55, null, null],
+    },
+  },
+  {
+    slug: "vendor-master-maintenance",
+    company: "fashion-house",
+    function: "Master Data",
+    title: "Vendor Master Data Maintenance",
+    subtitle: "Onboarding, banking updates, audits and compliance",
+    period: "2024",
+    summary:
+      "End-to-end vendor master data work: onboarding new vendors with tax-ID and banking verification, dual-control banking detail updates, inactive vendor cleanup, duplicate merges, and annual master data audits.",
+    process:
+      "Onboarding pack collected with W-8 or W-9, banking and references. Tax registration verified against CRA. Duplicate check and credit limit assignment per delegation of authority. Banking changes use dual verification (phone callback to a known good number) before any payment. Inactive records archived per retention policy.",
+    metrics: [
+      { label: "Vendors Onboarded", value: "8" },
+      { label: "Banking Updates Verified", value: "7 of 7" },
+      { label: "Master Audit Findings", value: "16 (all closed)" },
+      { label: "Duplicates Merged", value: "6 pairs" },
+    ],
+    table: {
+      headers: ["Date", "Vendor ID", "Vendor Name", "Category", "GST # Verified", "Credit Limit", "Terms", "Status"],
+      rows: [
+        ["04-Mar", "V-50421", "Pacific Embroidery Co.", "Trim Supplier", "Yes", 25000, "Net 30", "Active"],
+        ["07-Mar", "V-50422", "North Star Textiles", "Fabric", "Yes", 80000, "Net 45", "Active"],
+        ["11-Mar", "V-50423", "Coastal Print Services", "Print", "Yes", 8000, "Net 30", "Active"],
+        ["14-Mar", "V-50424", "Studio Maintenance Ltd.", "Facilities", "Yes", 5000, "Net 30", "Active"],
+        ["18-Mar", "V-50425", "Edmonton Logistics Inc.", "Freight", "Yes", 12000, "Net 30", "Active"],
+        ["22-Mar", "V-50426", "Brand Consultants West", "Marketing", "Yes", 18000, "Net 30", "Active"],
+        ["26-Mar", "V-50427", "Mountain Tech Services", "IT", "Yes", 6000, "Net 30", "Active"],
+        ["29-Mar", "V-50428", "Heritage Couriers", "Freight", "Pending", 0, "Net 30", "On Hold"],
+      ],
+      footer: [null, null, null, "TOTAL CREDIT EXPOSURE", null, 154000, null, null],
+    },
+  },
+  {
+    slug: "ad-hoc-management-reports",
+    company: "fashion-house",
+    function: "Report",
+    title: "Ad Hoc Management Reports",
+    subtitle: "Cash position, aging, variance and forecasting",
+    period: "Various",
+    summary:
+      "Routine and ad hoc management reports prepared for Treasury, the Controller and operations meetings: weekly cash position, AR and AP aging, budget vs actual variance, top vendor concentration, 13-week cash forecast, working capital snapshot, and year-over-year trends.",
+    process:
+      "Source data extracted from the trial balance, AR/AP sub-ledgers, bank statements and budget files. Variance analysis and narratives prepared with cost-centre owners. Reports peer-reviewed for accuracy before distribution to management.",
+    metrics: [
+      { label: "Report Types", value: "10" },
+      { label: "Weekly Cash Reports", value: "52" },
+      { label: "Monthly Aging Reports", value: "12" },
+      { label: "Audience", value: "Treasury, Controller" },
+    ],
+    table: {
+      headers: ["Account", "Mon", "Tue", "Wed", "Thu", "Fri", "WoW Change"],
+      rows: [
+        ["RBC Operating (CAD)", 284560, 296800, 318420, 312800, 318420, 33860],
+        ["RBC USD (CAD eq.)", 52400, 54200, 56820, 56400, 56820, 4420],
+        ["RBC Savings", 148960, 148960, 148960, 148960, 148960, 0],
+        ["Petty Cash", 1500, 1500, 1500, 1500, 1500, 0],
+      ],
+      footer: ["TOTAL", 487420, 501460, 525700, 519660, 525700, 38280],
     },
   },
 ];

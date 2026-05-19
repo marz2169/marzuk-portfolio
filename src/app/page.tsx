@@ -51,17 +51,17 @@ export default function Home() {
                 <span aria-hidden>→</span>
               </Link>
               <a href="#samples" className="btn-secondary">
-                Browse 8 Work Samples
+                Browse 9 Work Samples
               </a>
             </div>
             <dl className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
               <div className="kpi-card">
                 <dt className="text-xs uppercase tracking-wider text-slate-500">Work Samples</dt>
-                <dd className="mt-1 text-2xl font-semibold brand-text tabular">8</dd>
+                <dd className="mt-1 text-2xl font-semibold brand-text tabular">9</dd>
               </div>
               <div className="kpi-card">
                 <dt className="text-xs uppercase tracking-wider text-slate-500">Function Areas</dt>
-                <dd className="mt-1 text-2xl font-semibold brand-text tabular">6</dd>
+                <dd className="mt-1 text-2xl font-semibold brand-text tabular">8</dd>
               </div>
               <div className="kpi-card">
                 <dt className="text-xs uppercase tracking-wider text-slate-500">Engagements</dt>
@@ -207,7 +207,7 @@ export default function Home() {
           <div className="mb-10 max-w-3xl">
             <p className="section-eyebrow">Work Samples</p>
             <h3 className="mt-2 text-3xl font-bold text-slate-900">
-              Eight pieces of operational accounting work
+              Nine pieces of operational accounting work
             </h3>
             <p className="mt-3 text-slate-600">
               Each card links to a detailed walkthrough below with the source
@@ -216,7 +216,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {SAMPLES.map((s) => (
               <a
                 key={s.slug}

@@ -2137,6 +2137,621 @@ const TAX_TRACKERS: SampleVariant[] = [
   },
 ];
 
+// ============================================================================
+// VENDOR MASTER DATA MAINTENANCE
+// ============================================================================
+const VENDOR_MASTER: SampleVariant[] = [
+  {
+    label: "New Vendor Onboarding",
+    period: "March 2024",
+    company: "fashion-house",
+    theme: "Onboarding",
+    summary:
+      "New vendor master data setup for the month. Each vendor onboarded with W-8/W-9 collected, GST/HST number verified with CRA, banking details validated, and credit limit assigned per the credit policy.",
+    process:
+      "Onboarding pack collected from vendor (banking, tax ID, references). Tax registration verified against CRA registry. Duplicate check run against existing master. Credit limit assigned per AP director sign-off. Record activated with first invoice posting.",
+    metrics: [
+      { label: "New Vendors", value: "8" },
+      { label: "Activated", value: "7" },
+      { label: "Tax IDs Verified", value: "8 of 8" },
+      { label: "Avg Onboarding Days", value: "3.2" },
+    ],
+    table: {
+      headers: ["Date", "Vendor ID", "Vendor Name", "Category", "GST # Verified", "Credit Limit", "Terms", "Status"],
+      rows: [
+        ["04-Mar", "V-50421", "Pacific Embroidery Co.", "Trim Supplier", "Yes", 25000, "Net 30", "Active"],
+        ["07-Mar", "V-50422", "North Star Textiles", "Fabric", "Yes", 80000, "Net 45", "Active"],
+        ["11-Mar", "V-50423", "Coastal Print Services", "Print", "Yes", 8000, "Net 30", "Active"],
+        ["14-Mar", "V-50424", "Studio Maintenance Ltd.", "Facilities", "Yes", 5000, "Net 30", "Active"],
+        ["18-Mar", "V-50425", "Edmonton Logistics Inc.", "Freight", "Yes", 12000, "Net 30", "Active"],
+        ["22-Mar", "V-50426", "Brand Consultants West", "Marketing", "Yes", 18000, "Net 30", "Active"],
+        ["26-Mar", "V-50427", "Mountain Tech Services", "IT", "Yes", 6000, "Net 30", "Active"],
+        ["29-Mar", "V-50428", "Heritage Couriers", "Freight", "Pending", 0, "Net 30", "On Hold"],
+      ],
+      footer: [null, null, null, "TOTAL CREDIT EXPOSURE", null, 154000, null, null],
+    },
+  },
+  {
+    label: "Banking Detail Updates",
+    period: "April 2024",
+    company: "fashion-house",
+    theme: "Banking",
+    summary:
+      "Vendor banking detail updates with dual verification protocol. Each change verified via callback to a known good number, never accepting email-only requests to mitigate vendor fraud risk.",
+    process:
+      "Change request received via signed letterhead or vendor portal. Phone callback to a known good contact at the vendor confirms the change. Two-person review and AP supervisor approval. Updated record flagged for 48-hour cooling-off before first payment.",
+    metrics: [
+      { label: "Updates Processed", value: "7" },
+      { label: "Callback Verified", value: "7 of 7" },
+      { label: "Rejected (suspicious)", value: "1" },
+      { label: "Avg Review Days", value: "1.8" },
+    ],
+    table: {
+      headers: ["Date", "Vendor ID", "Vendor", "Change Type", "Verification Method", "Reviewer", "Status"],
+      rows: [
+        ["02-Apr", "V-30148", "Milano Textile Mills", "Bank account change", "Phone callback + letter", "AP Supervisor", "Approved"],
+        ["05-Apr", "V-30215", "Paris Embellishment Co.", "SWIFT code update", "Vendor portal + email", "AP Supervisor", "Approved"],
+        ["09-Apr", "V-30309", "Quebec Couriers Inc.", "Branch transit change", "Phone callback", "Senior Accountant", "Approved"],
+        ["12-Apr", "V-30401", "Northern Trims", "New beneficiary added", "In-person verification", "AP Supervisor", "Approved"],
+        ["15-Apr", "V-30502", "Unknown Vendor X", "Bank change, email only", "Failed callback", "AP Supervisor", "Rejected"],
+        ["22-Apr", "V-30615", "Atelier Silk Importers", "USD account opened", "Phone callback + letter", "Controller", "Approved"],
+        ["26-Apr", "V-30702", "Heritage Property Mgmt", "Routing number update", "Phone callback", "AP Supervisor", "Approved"],
+      ],
+    },
+  },
+  {
+    label: "Inactive Vendor Cleanup",
+    period: "Q1 2024",
+    company: "foodservice",
+    theme: "Cleanup",
+    summary:
+      "Quarterly review and deactivation of vendors with no activity over 18 months. Each inactive vendor archived with audit trail; AP balances confirmed at zero before deactivation.",
+    process:
+      "ERP report pulled for vendors with no posting in 18 months. AP balance verified zero for each. Tax compliance documents archived per 7-year retention. Vendor master record set to inactive with deactivation date and reason code captured.",
+    metrics: [
+      { label: "Inactive Identified", value: "12" },
+      { label: "Deactivated", value: "11" },
+      { label: "Retained (one-off)", value: "1" },
+      { label: "Lifetime Spend Archived", value: "$284,500" },
+    ],
+    table: {
+      headers: ["Vendor ID", "Vendor", "Last Activity", "Months Inactive", "Lifetime Spend", "Reason", "Action"],
+      rows: [
+        ["V-20105", "Sample Sample Co.", "Jun-22", 21, 24800, "Service discontinued", "Deactivate"],
+        ["V-20218", "Old Vendor Limited", "Aug-22", 19, 18400, "Vendor closed", "Deactivate"],
+        ["V-20312", "Discontinued Service", "Mar-22", 24, 42800, "Replaced by competitor", "Deactivate"],
+        ["V-20405", "One-Off Supplier", "Sep-22", 18, 8200, "One-time project only", "Deactivate"],
+        ["V-20512", "Trial Vendor", "Jul-22", 20, 12600, "Trial only", "Deactivate"],
+        ["V-20619", "Replaced Supplier A", "Oct-22", 17, 24400, "Replaced", "Deactivate"],
+        ["V-20725", "Replaced Supplier B", "Sep-22", 18, 18800, "Replaced", "Deactivate"],
+        ["V-20821", "Annual Service Only", "Mar-23", 12, 4800, "Retain, annual", "Keep Active"],
+        ["V-20908", "Vendor Sold", "Dec-22", 15, 38400, "Acquired by V-30148", "Merge"],
+        ["V-21015", "Bad Debt Vendor", "Aug-22", 19, 22400, "AR write-off", "Deactivate"],
+        ["V-21102", "Closed Account", "Sep-22", 18, 28200, "Closed by us", "Deactivate"],
+        ["V-21208", "Trial Subscription", "Jul-22", 20, 24500, "Trial period only", "Deactivate"],
+      ],
+      footer: [null, null, null, null, 268300, null, null],
+    },
+  },
+  {
+    label: "Master Data Audit",
+    period: "Year-End 2023",
+    company: "fashion-house",
+    theme: "Audit",
+    summary:
+      "Annual vendor master data integrity audit covering tax ID validity, banking details consistency, payment terms vs negotiated, and audit-trail compliance. Findings reported to controller.",
+    process:
+      "All-vendor extract from ERP. Each record checked against: CRA tax registry, current banking on file, terms vs negotiated contract, last modified date and approver. Findings categorized by severity and remediated within 30 days.",
+    metrics: [
+      { label: "Vendors Audited", value: "248" },
+      { label: "Clean Records", value: "232 (93.5%)" },
+      { label: "Findings", value: "16" },
+      { label: "Remediated", value: "16 of 16" },
+    ],
+    table: {
+      headers: ["Finding Category", "Severity", "Count", "Examples", "Action Taken", "Status"],
+      rows: [
+        ["Expired GST/HST registration", "High", 3, "V-10248, V-10319, V-20412", "Re-verified with CRA", "Closed"],
+        ["Banking detail not refreshed (>3yr)", "Medium", 4, "V-10148, V-10215, V-20148, V-20309", "Callback verification", "Closed"],
+        ["Payment terms not matching contract", "Medium", 5, "V-20148, V-20309, V-20402, V-20515, V-20618", "Updated in master", "Closed"],
+        ["Duplicate vendor record", "High", 2, "V-20908 / V-30148, V-20805 / V-30215", "Merged + AP balanced", "Closed"],
+        ["Missing W-8/W-9 documentation", "Low", 1, "V-30421", "Requested + filed", "Closed"],
+        ["Inactive but not deactivated", "Low", 1, "V-20105", "Deactivated", "Closed"],
+      ],
+      footer: [null, null, 16, null, null, null],
+    },
+  },
+  {
+    label: "Tax ID Verification Drive",
+    period: "September 2023",
+    company: "direct-sales",
+    theme: "Tax Compliance",
+    summary:
+      "Year-end tax ID verification campaign for all active vendors. Each GST/HST registration verified against CRA's online registry, and corrections initiated for non-matching records.",
+    process:
+      "CRA GST/HST registry checked for every active vendor. Mismatches flagged and vendor contacted for documentation. Records updated and re-verified. Non-responsive vendors placed on hold pending clarification.",
+    metrics: [
+      { label: "Vendors Checked", value: "186" },
+      { label: "Verified Active", value: "178" },
+      { label: "Cancelled Reg.", value: "3" },
+      { label: "Pending Update", value: "5" },
+    ],
+    table: {
+      headers: ["Vendor ID", "Vendor", "GST # on File", "CRA Result", "Issue", "Action"],
+      rows: [
+        ["V-20148", "Acme Suppliers Ltd.", "123456789RT0001", "Active", "None", "OK"],
+        ["V-20215", "BC Industrial Co.", "234567890RT0001", "Active", "None", "OK"],
+        ["V-20309", "Pacific West Trade", "345678901RT0001", "Cancelled 2023-06", "Reg. cancelled", "On Hold"],
+        ["V-20418", "Mountain Resources", "456789012RT0001", "Active", "None", "OK"],
+        ["V-20512", "West Coast Logistics", "567890123RT0001", "Different name", "Name mismatch", "Update"],
+        ["V-20615", "Heritage Property", "678901234RT0001", "Cancelled 2023-08", "Reg. cancelled", "On Hold"],
+        ["V-20719", "Quebec Couriers", "789012345RT0001", "Active", "None", "OK"],
+        ["V-20825", "Studio Lighting", "890123456RT0001", "Active", "None", "OK"],
+      ],
+    },
+  },
+  {
+    label: "Duplicate Vendor Merge",
+    period: "June 2024",
+    company: "fashion-house",
+    theme: "Cleanup",
+    summary:
+      "Investigation and merge of duplicate vendor records identified by name and tax ID matching. AP balances consolidated to surviving record; historical transactions re-pointed.",
+    process:
+      "ERP duplicate-detection rule on name + tax ID + banking. Each pair reviewed for true duplicate vs separate divisions. Surviving record selected (oldest with cleanest data). AP balance merged, transactions re-pointed, duplicate deactivated.",
+    metrics: [
+      { label: "Duplicates Found", value: "8 pairs" },
+      { label: "Merged", value: "6 pairs" },
+      { label: "Confirmed Separate", value: "2 pairs" },
+      { label: "AP Consolidated", value: "$42,800" },
+    ],
+    table: {
+      headers: ["Surviving ID", "Merged ID", "Vendor Name", "AP Before", "AP After", "Decision"],
+      rows: [
+        ["V-10148", "V-30248", "Milano Textile Mills", 42850, 42850, "Merged"],
+        ["V-10215", "V-30312", "Northern Trims & Notions", 7320, 7320, "Merged"],
+        ["V-10309", "V-30415", "Paris Embellishment", 15278, 15278, "Merged"],
+        ["V-10402", "V-30518", "Quebec Couriers", 2141, 2141, "Merged"],
+        ["V-10515", "V-30615", "Studio Lighting Inc.", 5460, 5460, "Merged"],
+        ["V-10618", "V-30715", "Heritage Property Mgmt.", 9600, 9600, "Merged"],
+        ["V-10719", "V-30815", "Atelier (Paris vs Milan)", 25184, 25184, "Kept separate"],
+        ["V-10825", "V-30912", "Couriers (East vs West)", 2840, 2840, "Kept separate"],
+      ],
+      footer: [null, null, "TOTAL AP REVIEWED", 110673, 110673, null],
+    },
+  },
+  {
+    label: "Payment Terms Review",
+    period: "Q2 2024",
+    company: "fashion-house",
+    theme: "Terms",
+    summary:
+      "Quarterly review of vendor payment terms against negotiated contracts. Discount opportunities identified and captured; non-compliant terms updated.",
+    process:
+      "Top 20 vendors reviewed by spend volume. Current terms compared to contract. Early-pay discounts evaluated against working capital cost. Recommended changes routed for vendor confirmation and master update.",
+    metrics: [
+      { label: "Vendors Reviewed", value: "20" },
+      { label: "Terms Updated", value: "8" },
+      { label: "Discount Captured", value: "$8,420" },
+      { label: "Working Capital Saved", value: "12 days" },
+    ],
+    table: {
+      headers: ["Vendor ID", "Vendor", "Old Terms", "New Terms", "Annual Spend", "Discount Captured"],
+      rows: [
+        ["V-10148", "Milano Textile Mills", "Net 30", "2/10 Net 30", 384000, 7680],
+        ["V-10215", "Northern Trims", "Net 30", "1/10 Net 30", 142000, 1420],
+        ["V-10309", "Paris Embellishment", "Net 60", "Net 45", 184000, 0],
+        ["V-10402", "Atelier Silk Importers", "Net 30", "Net 45", 248000, 0],
+        ["V-10515", "Studio Lighting", "Net 30", "2/10 Net 30", 48000, 960],
+        ["V-10618", "Creative Media", "Net 45", "Net 30", 168000, 0],
+        ["V-10719", "Quebec Couriers", "Net 15", "Net 30", 28000, 0],
+        ["V-10825", "Heritage Property", "Net 1", "Net 5", 115200, 0],
+      ],
+      footer: [null, null, null, "TOTAL", 1317200, 10060],
+    },
+  },
+  {
+    label: "Vendor Categorization",
+    period: "May 2024",
+    company: "foodservice",
+    theme: "Master Data",
+    summary:
+      "Recategorization of vendor master records by spend category and 1099 reporting class. Used for management spend reporting and year-end tax reporting accuracy.",
+    process:
+      "Categories aligned to chart of accounts spend groupings. 1099 reporting class assigned per US contractor rules where applicable. Vendor master updated and re-coded in ERP.",
+    metrics: [
+      { label: "Vendors Recategorized", value: "84" },
+      { label: "Categories Used", value: "12" },
+      { label: "1099 Reporting Updated", value: "18" },
+      { label: "Spend Analyzed", value: "$2.4M" },
+    ],
+    table: {
+      headers: ["Category", "Vendor Count", "Annual Spend", "% of Total", "1099 Required"],
+      rows: [
+        ["Food & Beverage", 18, 842000, "35.1%", "No"],
+        ["Cleaning & Supplies", 12, 184000, "7.7%", "No"],
+        ["Utilities", 6, 168000, "7.0%", "No"],
+        ["Professional Services", 14, 285000, "11.9%", "Yes"],
+        ["Marketing & Media", 8, 196000, "8.2%", "Yes"],
+        ["Repairs & Maintenance", 10, 142000, "5.9%", "No"],
+        ["Equipment & Smallwares", 5, 248000, "10.3%", "No"],
+        ["Freight & Logistics", 6, 96000, "4.0%", "No"],
+        ["Insurance & Compliance", 3, 142000, "5.9%", "No"],
+        ["IT & Software", 2, 96800, "4.0%", "Yes"],
+      ],
+      footer: [null, 84, 2399800, "100%", null],
+    },
+  },
+  {
+    label: "Critical Vendor Review",
+    period: "March 2024",
+    company: "fashion-house",
+    theme: "Risk",
+    summary:
+      "Identification and review of critical vendors representing 80% of annual spend. Each critical vendor assessed for concentration risk, financial health, and backup supplier readiness.",
+    process:
+      "Pareto analysis: top vendors by spend. Each critical vendor scored on: financial health (D&B), backup availability, switching cost, contract renewal date. Risk score reported to controller for procurement review.",
+    metrics: [
+      { label: "Critical Vendors", value: "12 (of 248)" },
+      { label: "% of Spend", value: "80%" },
+      { label: "High Risk", value: "2" },
+      { label: "Backups Identified", value: "10 of 12" },
+    ],
+    table: {
+      headers: ["Vendor", "Annual Spend", "% of Total", "Risk Score", "Backup", "Contract Expiry"],
+      rows: [
+        ["Milano Textile Mills", 384000, "18%", "Low", "Yes (V-10248)", "Dec-2025"],
+        ["Atelier Silk Importers", 248000, "12%", "Medium", "Yes (V-10309)", "Mar-2025"],
+        ["Paris Embellishment", 184000, "9%", "High", "No", "Jun-2024"],
+        ["Northern Trims", 142000, "7%", "Low", "Yes", "Sep-2025"],
+        ["Lombardia Leather", 124000, "6%", "Medium", "Yes", "Dec-2024"],
+        ["Creative Media Partners", 168000, "8%", "Low", "Yes", "Mar-2026"],
+        ["Heritage Property Mgmt.", 115200, "5%", "Low", "N/A (lease)", "Dec-2027"],
+        ["Studio Lighting", 48000, "2%", "Low", "Yes", "ongoing"],
+      ],
+      footer: [null, 1413200, "67%", null, null, null],
+    },
+  },
+  {
+    label: "W-8/W-9 Refresh",
+    period: "Q4 2023",
+    company: "direct-sales",
+    theme: "Compliance",
+    summary:
+      "Year-end refresh of W-8 (non-resident) and W-9 (US) tax documentation for foreign vendor population, ensuring withholding tax compliance for cross-border payments.",
+    process:
+      "Foreign vendor list pulled. Each vendor sent renewal request 60 days before W-8 expiry. Documents returned, reviewed for completeness, and filed. Withholding rate confirmed per treaty.",
+    metrics: [
+      { label: "Forms Requested", value: "32" },
+      { label: "Received", value: "29" },
+      { label: "Outstanding", value: "3" },
+      { label: "Treaty-Reduced Rate", value: "18" },
+    ],
+    table: {
+      headers: ["Vendor", "Country", "Form Type", "Treaty Rate", "Status", "Expiry"],
+      rows: [
+        ["Atelier Silk Importers SA", "France", "W-8BEN-E", "10%", "Received", "Dec-2026"],
+        ["Lombardia Leather Goods", "Italy", "W-8BEN-E", "15%", "Received", "Dec-2026"],
+        ["Paris Embellishment Co.", "France", "W-8BEN-E", "10%", "Received", "Dec-2026"],
+        ["NY Brand Consultants", "USA", "W-9", "0%", "Received", "Ongoing"],
+        ["London Trademark Agent", "UK", "W-8BEN-E", "10%", "Outstanding", "Sep-2024"],
+        ["Milano Showroom Rep", "Italy", "W-8BEN-E", "15%", "Received", "Dec-2026"],
+        ["Hong Kong Sourcing", "HK", "W-8BEN-E", "15%", "Outstanding", "Oct-2024"],
+        ["Seattle Threads Inc.", "USA", "W-9", "0%", "Received", "Ongoing"],
+      ],
+    },
+  },
+];
+
+// ============================================================================
+// AD HOC MANAGEMENT REPORTS
+// ============================================================================
+const AD_HOC_REPORTS: SampleVariant[] = [
+  {
+    label: "Weekly Cash Position",
+    period: "Week of Apr 22, 2024",
+    company: "fashion-house",
+    theme: "Cash Reporting",
+    summary:
+      "Weekly cash position report covering all bank accounts in operating, USD and savings positions. Used by Treasury for the weekly working capital and FX hedging review.",
+    process:
+      "Daily bank balance file pulled from RBC. Reconciled to GL. Cash forecast for next 4 weeks built from AR collections schedule, AP payment schedule, and known one-offs. Variance to forecast reported.",
+    metrics: [
+      { label: "Total Available", value: "$524,200" },
+      { label: "Operating", value: "$318,420" },
+      { label: "USD (CAD eq.)", value: "$56,820" },
+      { label: "Savings", value: "$148,960" },
+    ],
+    table: {
+      headers: ["Account", "Mon", "Tue", "Wed", "Thu", "Fri", "WoW Change"],
+      rows: [
+        ["RBC Operating (CAD)", 284560, 296800, 318420, 312800, 318420, 33860],
+        ["RBC USD (CAD eq.)", 52400, 54200, 56820, 56400, 56820, 4420],
+        ["RBC Savings", 148960, 148960, 148960, 148960, 148960, 0],
+        ["Petty Cash", 1500, 1500, 1500, 1500, 1500, 0],
+      ],
+      footer: ["TOTAL", 487420, 501460, 525700, 519660, 525700, 38280],
+    },
+  },
+  {
+    label: "AR Aging Summary",
+    period: "As at Apr 30, 2024",
+    company: "direct-sales",
+    theme: "AR Reporting",
+    summary:
+      "Month-end AR aging report by customer with bucket analysis. Customers over 60 days flagged for collections escalation; allowance for doubtful accounts updated.",
+    process:
+      "AR sub-ledger aging report pulled. Aging analysis by customer and bucket. Customers > 60 days reviewed individually for collectability. ADA percentage applied to each bucket per policy.",
+    metrics: [
+      { label: "Total AR", value: "$246,840" },
+      { label: "Current", value: "$148,200 (60%)" },
+      { label: ">60 days", value: "$28,420 (12%)" },
+      { label: "ADA Required", value: "$8,420" },
+    ],
+    table: {
+      headers: ["Customer", "Current", "31-60", "61-90", "91-120", ">120", "Total"],
+      rows: [
+        ["Maple Leaf Retail Group", 42800, 8400, 0, 0, 0, 51200],
+        ["Pacific Boutiques Ltd.", 24800, 6200, 4200, 0, 0, 35200],
+        ["Coastal Department Stores", 38400, 12000, 0, 0, 0, 50400],
+        ["Urban Threads Inc.", 14800, 4200, 2400, 0, 0, 21400],
+        ["Northern Apparel Co.", 12400, 2800, 8400, 0, 0, 23600],
+        ["Evergreen Outfitters", 8400, 3200, 1200, 4200, 0, 17000],
+        ["Boutique LaMode", 4200, 2800, 6420, 8400, 1900, 23720],
+        ["West Coast Style", 2400, 1800, 4200, 6420, 9500, 24320],
+      ],
+      footer: ["TOTAL", 148200, 41400, 26820, 19020, 11400, 246840],
+    },
+  },
+  {
+    label: "AP Aging Summary",
+    period: "As at Apr 30, 2024",
+    company: "fashion-house",
+    theme: "AP Reporting",
+    summary:
+      "Month-end AP aging by vendor for working capital and disbursement planning. Items past terms flagged for immediate action; early-pay discounts highlighted.",
+    process:
+      "AP sub-ledger aging pulled. Items past terms identified and contacted for issue. Early-pay discount window items highlighted. Disbursement plan for next two weeks built from this report.",
+    metrics: [
+      { label: "Total AP", value: "$384,200" },
+      { label: "Current (within terms)", value: "$284,400 (74%)" },
+      { label: "Past Terms", value: "$48,400 (13%)" },
+      { label: "Discount Available", value: "$3,840" },
+    ],
+    table: {
+      headers: ["Vendor", "Current", "1-30 Past Due", "31-60 Past Due", ">60 Past Due", "Total"],
+      rows: [
+        ["Milano Textile Mills", 84200, 0, 0, 0, 84200],
+        ["Atelier Silk Importers", 48200, 8400, 0, 0, 56600],
+        ["Northern Trims", 22480, 0, 0, 0, 22480],
+        ["Paris Embellishment", 32400, 12000, 4200, 0, 48600],
+        ["Lombardia Leather", 22480, 0, 0, 0, 22480],
+        ["Heritage Property Mgmt.", 9600, 0, 0, 0, 9600],
+        ["Creative Media Partners", 24800, 6200, 0, 0, 31000],
+        ["Other vendors (18)", 40240, 14800, 4600, 9400, 69040],
+      ],
+      footer: ["TOTAL", 284400, 41400, 8800, 9400, 344000],
+    },
+  },
+  {
+    label: "Departmental Spend",
+    period: "Q1 2024",
+    company: "foodservice",
+    theme: "Variance",
+    summary:
+      "Quarterly departmental spend variance report against budget. Notable variances highlighted with explanations for the operations meeting; cost centre managers briefed.",
+    process:
+      "Trial balance broken down by department/cost centre. Compared to Q1 budget. Variances over 5% flagged. Brief explanations gathered from each cost centre manager. Consolidated for ops review.",
+    metrics: [
+      { label: "Q1 Actual", value: "$1,840,200" },
+      { label: "Q1 Budget", value: "$1,792,800" },
+      { label: "Variance", value: "+$47,400 (2.6%)" },
+      { label: "Cost Centres", value: "8" },
+    ],
+    table: {
+      headers: ["Cost Centre", "Q1 Actual", "Q1 Budget", "Variance $", "Variance %", "Reason"],
+      rows: [
+        ["Kitchen Operations", 624000, 600000, 24000, "+4.0%", "Food costs rose"],
+        ["Front of House", 348000, 360000, -12000, "+3.3% F", "Staffing optimization"],
+        ["Marketing", 96000, 80000, 16000, "-20.0%", "Spring campaign launch"],
+        ["Facilities & Maint.", 124000, 120000, 4000, "+3.3%", "HVAC repairs"],
+        ["IT & Systems", 48000, 52000, -4000, "+7.7% F", "Delayed project"],
+        ["Admin & Finance", 142000, 140000, 2000, "+1.4%", "On track"],
+        ["Catering", 184000, 168000, 16000, "+9.5%", "Higher event volume"],
+        ["Procurement", 274200, 272800, 1400, "+0.5%", "On track"],
+      ],
+      footer: ["TOTAL", 1840200, 1792800, 47400, "+2.6%", null],
+    },
+  },
+  {
+    label: "Top 20 Vendor Spend",
+    period: "FY 2023",
+    company: "fashion-house",
+    theme: "Concentration",
+    summary:
+      "Annual top-20 vendor spend analysis for concentration risk assessment and supplier strategy. Identifies dependence risk and negotiation opportunities.",
+    process:
+      "Pareto analysis from AP ledger. Top 20 vendors by annual spend identified. Each vendor reviewed for criticality, contract renewal timeline and alternate suppliers. Strategic insights flagged for procurement.",
+    metrics: [
+      { label: "Top 20 Spend", value: "$1,628,400" },
+      { label: "% of Total", value: "78%" },
+      { label: "Total AP Spend", value: "$2,088,000" },
+      { label: "Vendor Count Total", value: "248" },
+    ],
+    table: {
+      headers: ["Rank", "Vendor", "Annual Spend", "% of Total", "Category", "Strategic"],
+      rows: [
+        [1, "Milano Textile Mills", 384000, "18.4%", "Fabric", "Critical"],
+        [2, "Atelier Silk Importers", 248000, "11.9%", "Fabric", "Critical"],
+        [3, "Paris Embellishment", 184000, "8.8%", "Trims", "Critical"],
+        [4, "Creative Media Partners", 168000, "8.0%", "Marketing", "Strategic"],
+        [5, "Northern Trims", 142000, "6.8%", "Trims", "Critical"],
+        [6, "Lombardia Leather", 124000, "5.9%", "Materials", "Strategic"],
+        [7, "Heritage Property Mgmt.", 115200, "5.5%", "Facilities", "Critical"],
+        [8, "Runway Events Group", 84000, "4.0%", "Marketing", "Strategic"],
+        [9, "Studio Lighting Solutions", 48000, "2.3%", "Equipment", "Standard"],
+        [10, "Quebec Couriers Inc.", 28000, "1.3%", "Freight", "Standard"],
+        [11, "Other 11-20", 103200, "4.9%", "Various", "Standard"],
+      ],
+      footer: [null, "TOP 20 TOTAL", 1628400, "78%", null, null],
+    },
+  },
+  {
+    label: "Budget vs Actual",
+    period: "Q1 2024",
+    company: "fashion-house",
+    theme: "Variance",
+    summary:
+      "Quarterly P&L budget-vs-actual report with variance analysis at the line level. Used in the Q1 operations meeting to drive corrective action.",
+    process:
+      "Income statement actuals from the trial balance compared to Q1 budget. Variance % calculated for each line. Drivers analyzed for variances over 5% or $5K. Commentary added per line.",
+    metrics: [
+      { label: "Q1 Revenue Actual", value: "$398,240" },
+      { label: "vs Budget", value: "-$1,760 (-0.4%)" },
+      { label: "Q1 NI Actual", value: "$71,899" },
+      { label: "vs Budget Net", value: "-$3,101 (-4.1%)" },
+    ],
+    table: {
+      headers: ["P&L Line", "Actual", "Budget", "Variance $", "Variance %", "Driver"],
+      rows: [
+        ["Wholesale Revenue", 218400, 220000, -1600, "-0.7%", "On plan"],
+        ["Retail Revenue", 174600, 175000, -400, "-0.2%", "On plan"],
+        ["FX Gain", 5240, 5000, 240, "+4.8%", "Favorable USD"],
+        ["Total Revenue", 398240, 400000, -1760, "-0.4%", ""],
+        ["COGS", -152000, -148000, -4000, "+2.7%", "Material costs up"],
+        ["Gross Profit", 246240, 252000, -5760, "-2.3%", ""],
+        ["Salaries & Wages", -67200, -68000, 800, "-1.2%", "Vacant role"],
+        ["Marketing", -28400, -25000, -3400, "+13.6%", "Spring launch"],
+        ["Rent & Utilities", -28800, -28500, -300, "+1.1%", "On plan"],
+        ["Depreciation", -7500, -7500, 0, "+0.0%", "On schedule"],
+        ["Other Operating", -18475, -16000, -2475, "+15.5%", "Insurance increase"],
+        ["Operating Income", 95865, 107000, -11135, "-10.4%", ""],
+        ["Income Tax", -23966, -26750, 2784, "-10.4%", "Lower OI"],
+        ["NET INCOME", 71899, 80250, -8351, "-10.4%", ""],
+      ],
+    },
+  },
+  {
+    label: "13-Week Cash Forecast",
+    period: "May 2024 to Aug 2024",
+    company: "fashion-house",
+    theme: "Forecasting",
+    summary:
+      "Rolling 13-week cash flow forecast for Treasury. Captures collections, disbursements, and the working capital cycle through summer collection production.",
+    process:
+      "Opening cash + AR collections (scheduled per AR aging) + AP disbursements (scheduled per AP terms) + known one-offs = ending cash. Rolled forward 13 weeks. Variance reported to actuals weekly.",
+    metrics: [
+      { label: "Opening Cash", value: "$318,420" },
+      { label: "13-Wk Low", value: "$184,200 (Wk 28)" },
+      { label: "13-Wk High", value: "$498,400 (Wk 32)" },
+      { label: "Min Cash Buffer", value: "$150,000" },
+    ],
+    table: {
+      headers: ["Week", "Period", "Collections", "Disbursements", "Net", "Ending Cash"],
+      rows: [
+        ["W19", "May 6-12", 84000, -72000, 12000, 330420],
+        ["W20", "May 13-19", 62000, -48000, 14000, 344420],
+        ["W21", "May 20-26", 48000, -54000, -6000, 338420],
+        ["W22", "May 27-Jun 2", 92000, -68000, 24000, 362420],
+        ["W23", "Jun 3-9", 78000, -62000, 16000, 378420],
+        ["W24", "Jun 10-16", 56000, -84000, -28000, 350420],
+        ["W25", "Jun 17-23", 124000, -48000, 76000, 426420],
+        ["W26", "Jun 24-30", 68000, -92000, -24000, 402420],
+        ["W27", "Jul 1-7", 42000, -68000, -26000, 376420],
+        ["W28", "Jul 8-14", 18000, -210220, -192220, 184200],
+        ["W29", "Jul 15-21", 38000, -48000, -10000, 174200],
+        ["W30", "Jul 22-28", 128000, -42000, 86000, 260200],
+        ["W31", "Jul 29-Aug 4", 224000, -86000, 138000, 398200],
+        ["W32", "Aug 5-11", 148000, -47800, 100200, 498400],
+      ],
+      footer: [null, "TOTAL", 1210000, -1030020, 179980, null],
+    },
+  },
+  {
+    label: "Working Capital Snapshot",
+    period: "As at Mar 31, 2024",
+    company: "fashion-house",
+    theme: "Liquidity",
+    summary:
+      "Month-end working capital snapshot reporting on cash conversion cycle components and comparing against prior period and industry benchmarks.",
+    process:
+      "Current assets and liabilities pulled from month-end balance sheet. Days sales outstanding, days inventory outstanding, and days payable outstanding computed. Compared to prior month and rolling 6-month average.",
+    metrics: [
+      { label: "Working Capital", value: "$717,585" },
+      { label: "Current Ratio", value: "2.27" },
+      { label: "Cash Conv. Cycle", value: "68 days" },
+      { label: "vs Prior Month", value: "-3 days (better)" },
+    ],
+    table: {
+      headers: ["Component", "Current Mo.", "Prior Mo.", "Change", "Days", "6-Mo Avg"],
+      rows: [
+        ["Cash & Equivalents", 375240, 348200, 27040, "n/a", 342800],
+        ["Accounts Receivable", 642000, 618400, 23600, "DSO 58", "DSO 62"],
+        ["Inventory", 231400, 248400, -17000, "DIO 42", "DIO 45"],
+        ["Prepaids & Other", 18945, 16800, 2145, "n/a", "n/a"],
+        ["Total Current Assets", 1267585, 1231800, 35785, "", ""],
+        ["Accounts Payable", -384200, -402800, 18600, "DPO 32", "DPO 28"],
+        ["Accrued & Other", -119650, -108400, -11250, "n/a", "n/a"],
+        ["Total Current Liabilities", -503850, -511200, 7350, "", ""],
+        ["WORKING CAPITAL", 763735, 720600, 43135, "", ""],
+      ],
+    },
+  },
+  {
+    label: "YoY Revenue Comparison",
+    period: "FY22 vs FY23",
+    company: "fashion-house",
+    theme: "Trending",
+    summary:
+      "Year-over-year revenue comparison by channel and product line. Growth rates calculated and key driver narratives prepared for the annual review.",
+    process:
+      "Revenue from FY22 and FY23 income statements pulled. Variance and growth rate computed by channel. Mix shift analyzed. Narratives prepared with channel leads.",
+    metrics: [
+      { label: "FY23 Revenue", value: "$2,196,000" },
+      { label: "FY22 Revenue", value: "$1,800,000" },
+      { label: "Growth", value: "+$396,000 (+22%)" },
+      { label: "Channels Grown", value: "3 of 3" },
+    ],
+    table: {
+      headers: ["Channel", "FY23 Revenue", "FY22 Revenue", "Variance $", "Growth %", "Mix Shift"],
+      rows: [
+        ["Wholesale", 1188000, 980000, 208000, "+21.2%", "54.1% to 54.1%"],
+        ["Retail Boutique", 928000, 760000, 168000, "+22.1%", "42.2% to 42.3%"],
+        ["Licensing & Royalty", 80000, 60000, 20000, "+33.3%", "3.6% to 3.7%"],
+      ],
+      footer: ["TOTAL REVENUE", 2196000, 1800000, 396000, "+22.0%", null],
+    },
+  },
+  {
+    label: "Expense Trend",
+    period: "H1 2024",
+    company: "foodservice",
+    theme: "Trending",
+    summary:
+      "Six-month operating expense trend report by category showing month-over-month movement. Highlights inflationary pressure on food costs and labour.",
+    process:
+      "Monthly expense totals by category pulled for Jan-Jun. Trend visualized and exception items called out. Helps management react to cost pressure between budget cycles.",
+    metrics: [
+      { label: "H1 Total Expense", value: "$1,084,800" },
+      { label: "Jan to Jun Growth", value: "+8.4%" },
+      { label: "Largest Mover", value: "Food Costs +14%" },
+      { label: "Lowest Mover", value: "Utilities -2%" },
+    ],
+    table: {
+      headers: ["Category", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Trend"],
+      rows: [
+        ["F&B COGS", 27200, 28400, 29600, 30800, 30200, 31200, "+14.7%"],
+        ["Salaries & Wages", 46200, 48000, 49600, 51200, 51800, 52400, "+13.4%"],
+        ["Rent", 7400, 7400, 7600, 7600, 7600, 7600, "+2.7%"],
+        ["Utilities", 1240, 1180, 1260, 1240, 1200, 1220, "-1.6%"],
+        ["Marketing", 6400, 5800, 7200, 8400, 6800, 4800, "-25.0%"],
+        ["R&M", 800, 600, 1800, 1240, 900, 1100, "+37.5%"],
+      ],
+      footer: ["TOTAL", 89240, 91380, 97060, 100480, 98500, 98320, null],
+    },
+  },
+];
+
 export const SAMPLE_SERIES: Record<string, SampleVariant[]> = {
   "manual-expense-reports": EXPENSE_REPORT_VARIANTS,
   "outgoing-payments-register": PAYMENTS_VARIANTS,
@@ -2145,4 +2760,6 @@ export const SAMPLE_SERIES: Record<string, SampleVariant[]> = {
   "month-end-journal-entries": MONTH_END_JES,
   "gl-account-reconciliations": GL_RECONS,
   "tax-returns-tracker": TAX_TRACKERS,
+  "vendor-master-maintenance": VENDOR_MASTER,
+  "ad-hoc-management-reports": AD_HOC_REPORTS,
 };
