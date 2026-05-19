@@ -68,8 +68,8 @@ export function WorkSampleSection({ slug, fn, title, subtitle }: Props) {
 
         <VariantTabs variants={variants} active={active} setActive={setActive} />
 
-        <div className="grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12">
-          <div>
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12 min-w-0">
+          <div className="min-w-0">
             <p className="mt-2 text-sm text-slate-700 leading-relaxed">{v.summary}</p>
             <div className="mt-5 p-4 rounded-lg bg-slate-50 border border-slate-200">
               <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
@@ -84,21 +84,29 @@ export function WorkSampleSection({ slug, fn, title, subtitle }: Props) {
             )}
           </div>
 
-          <div>
+          <div className="min-w-0">
             <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
               {v.metrics.map((m) => (
                 <div key={m.label} className="kpi-card">
                   <dt className="text-xs uppercase tracking-wider text-slate-500">
                     {m.label}
                   </dt>
-                  <dd className="mt-1 text-lg font-semibold brand-text tabular">
+                  <dd className="mt-1 text-base sm:text-lg font-semibold brand-text tabular">
                     {m.value}
                   </dd>
                 </div>
               ))}
             </dl>
 
-            <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
+            <div className="relative overflow-x-auto rounded-lg border border-slate-200 bg-white touch-pan-x">
+              <div className="md:hidden absolute top-2 right-2 z-10 pointer-events-none">
+                <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-white bg-slate-900/70 px-2 py-1 rounded-full backdrop-blur-sm">
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                  swipe
+                </span>
+              </div>
               <table className="ledger-table">
                 <thead>
                   <tr>

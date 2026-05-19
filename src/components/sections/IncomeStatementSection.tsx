@@ -32,8 +32,8 @@ export function IncomeStatementSection() {
 
         <VariantTabs variants={INCOME_STATEMENT_VARIANTS} active={active} setActive={setActive} />
 
-        <div className="grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12">
-          <div>
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12 min-w-0">
+          <div className="min-w-0">
             <p className="text-sm text-slate-700 leading-relaxed">{v.summary}</p>
             <div className="mt-5 grid grid-cols-2 gap-3">
               <div className="kpi-card">
@@ -75,7 +75,7 @@ export function IncomeStatementSection() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-slate-200 bg-white overflow-hidden">
+          <div className="min-w-0 rounded-lg border border-slate-200 bg-white overflow-x-auto touch-pan-x">
             <table className="ledger-table">
               <tbody>
                 {v.lines.map((line, i) => {

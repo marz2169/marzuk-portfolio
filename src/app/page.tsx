@@ -5,6 +5,7 @@ import { RedactedCompany } from "@/components/RedactedCompany";
 import { WorkSampleSection } from "@/components/WorkSampleSection";
 import { ToolsUsed } from "@/components/ToolsUsed";
 import { SiteHeader } from "@/components/SiteHeader";
+import { MobileQuickNav } from "@/components/MobileQuickNav";
 
 export default function Home() {
   const uniqueCompanies = Array.from(new Set(SAMPLES.map((s) => s.company)));
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50">
       <SiteHeader variant="home" />
+      <MobileQuickNav />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-white border-b border-slate-200">
@@ -26,11 +28,11 @@ export default function Home() {
         <div className="absolute top-0 right-0 -translate-y-1/3 translate-x-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-amber-200/20 to-transparent blur-3xl pointer-events-none" aria-hidden />
         <div className="relative max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-[1.4fr_1fr] gap-12 items-center">
           <div>
-            <p className="section-eyebrow mb-3">Accounting Work Portfolio &nbsp;/&nbsp; 2026</p>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+            <p className="section-eyebrow mb-3 fade-up fade-up-1">Accounting Work Portfolio &nbsp;/&nbsp; 2026</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight fade-up fade-up-2">
               Marzuk Haider Chowdhury
             </h1>
-            <h2 className="mt-2 text-xl md:text-2xl text-slate-600 font-medium">
+            <h2 className="mt-2 text-xl md:text-2xl text-slate-600 font-medium fade-up fade-up-3">
               Accountant &nbsp;·&nbsp; Burnaby, BC
             </h2>
             <p className="mt-6 text-base md:text-lg text-slate-700 max-w-2xl leading-relaxed">

@@ -36,7 +36,7 @@ export function TAccountSection() {
 
         <VariantTabs variants={T_ACCOUNT_VARIANTS} active={active} setActive={setActive} />
 
-        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-8 lg:gap-12 min-w-0">
           <div>
             <p className="text-sm text-slate-700 leading-relaxed">{v.summary}</p>
             <div className="mt-5 grid grid-cols-2 gap-3">

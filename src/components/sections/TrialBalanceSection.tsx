@@ -26,7 +26,7 @@ export function TrialBalanceSection() {
 
         <VariantTabs variants={TRIAL_BALANCE_VARIANTS} active={active} setActive={setActive} />
 
-        <div className="grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12 min-w-0">
           <div>
             <p className="text-sm text-slate-700 leading-relaxed">{v.summary}</p>
             <div className="mt-5 grid grid-cols-2 gap-3">
@@ -53,7 +53,15 @@ export function TrialBalanceSection() {
             </div>
           </div>
 
-          <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
+          <div className="relative min-w-0 overflow-x-auto rounded-lg border border-slate-200 bg-white touch-pan-x">
+            <div className="md:hidden absolute top-2 right-2 z-10 pointer-events-none">
+              <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-white bg-slate-900/70 px-2 py-1 rounded-full backdrop-blur-sm">
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+                swipe
+              </span>
+            </div>
             <table className="ledger-table">
               <thead>
                 <tr>
